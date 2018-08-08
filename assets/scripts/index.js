@@ -7,6 +7,25 @@
 // require('./example')
 const gameEngine = require('./game-engine/board.js')
 
+let currentBoard = ['', 'o', '', 'x', '', '', '', '']
+let currentPlayer = 'x'
+
+const addCurrentPlayer = (indexNum) => {
+  if (currentBoard[indexNum]) {
+    console.log('sorry that spot is taken')
+  } else {
+    currentBoard[indexNum] = currentPlayer
+  }
+}
+
+const switchPlayers = () => {
+  if (currentPlayer === 'x') {
+    currentPlayer = 'o'
+  } else {
+    currentPlayer = 'x'
+  }
+}
+
 $(() => {
   $('#new-game-button').on('click', () => {
     $('.game-container').show()
