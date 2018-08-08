@@ -1,39 +1,41 @@
 'use strict'
 
+const gameEngine = require('./game-logic.js')
+
 const addTopLeft = () => {
-  console.log('top left clicked!')
+  gameEngine.addCurrentPlayer(0)
 }
 
 const addTopMiddle = () => {
-  console.log('top middle clicked!')
+  gameEngine.addCurrentPlayer(1)
 }
 
 const addTopRight = () => {
-  console.log('top right clicked!')
+  gameEngine.addCurrentPlayer(2)
 }
 
 const addMiddleLeft = () => {
-  console.log('middle left clicked!')
+  gameEngine.addCurrentPlayer(3)
 }
 
 const addMiddleMiddle = () => {
-  console.log('middle middle clicked!')
+  gameEngine.addCurrentPlayer(4)
 }
 
 const addMiddleRight = () => {
-  console.log('middle right clicked!')
+  gameEngine.addCurrentPlayer(5)
 }
 
 const addBottomLeft = () => {
-  console.log('bottom left clicked!')
+  gameEngine.addCurrentPlayer(6)
 }
 
 const addBottomMiddle = () => {
-  console.log('bottom middle clicked!')
+  gameEngine.addCurrentPlayer(7)
 }
 
 const addBottomRight = () => {
-  console.log('bottom right clicked!')
+  gameEngine.addCurrentPlayer(8)
 }
 
 const addHandlers = () => {

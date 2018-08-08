@@ -5,30 +5,10 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
-const gameEngine = require('./game-engine/board.js')
-const gameHandlers = require('./game-engine/game-events.js')
-
-let currentBoard = ['', 'o', '', 'x', '', '', '', '']
-let currentPlayer = 'x'
-
-const addCurrentPlayer = (indexNum) => {
-  if (currentBoard[indexNum]) {
-    console.log('sorry that spot is taken')
-  } else {
-    currentBoard[indexNum] = currentPlayer
-  }
-}
-
-const switchPlayers = () => {
-  if (currentPlayer === 'x') {
-    currentPlayer = 'o'
-  } else {
-    currentPlayer = 'x'
-  }
-}
+const gameEvents = require('./game/game-events.js')
 
 $(() => {
-  gameHandlers.addHandlers()
+  gameEvents.addHandlers()
   $('#new-game-button').on('click', () => {
     $('.game-container').show()
   })
