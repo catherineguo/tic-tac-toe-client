@@ -22,6 +22,11 @@ const addMark = (indexNum, currentPlayer) => {
   }
 }
 
+const clearBoard = () => {
+  $('#game-container div div').html('')
+}
+
 module.exports = {
-  addMark
+  addMark,
+  clearBoard
 }

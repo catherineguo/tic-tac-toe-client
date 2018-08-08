@@ -38,6 +38,10 @@ const addBottomRight = () => {
   gameEngine.addCurrentPlayer(8)
 }
 
+const newGame = () => {
+  gameEngine.resetBoard()
+}
+
 const addHandlers = () => {
   $('#topLeft').on('click', addTopLeft)
   $('#topMiddle').on('click', addTopMiddle)
@@ -48,6 +52,7 @@ const addHandlers = () => {
   $('#bottomLeft').on('click', addBottomLeft)
   $('#bottomMiddle').on('click', addBottomMiddle)
   $('#bottomRight').on('click', addBottomRight)
+  $('#new-game-button').on('click', newGame)
 }
 
 module.exports = {

@@ -9,7 +9,4 @@ const gameEvents = require('./game/game-events.js')
 
 $(() => {
   gameEvents.addHandlers()
-  $('#new-game-button').on('click', () => {
-    $('.game-container').show()
-  })
 })
