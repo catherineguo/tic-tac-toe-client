@@ -1,7 +1,11 @@
 body {
+  align-items: center;
   background-color: $background-color;
   color: $font-color;
+  display: flex;
+  flex-direction: column;
   font-size: $body-font-size;
+  justify-content: center;
   line-height: $body-line-height;
   margin: $margin;
   padding: $body-padding;
@@ -12,6 +16,10 @@ body {
 
   a:hover {
     color: $link-hover-color;
+  }
+
+  .btn {
+    font-size: 18px;
   }
 
   h1 {
@@ -28,9 +36,52 @@ body {
     margin: $element-margin;
   }
 
-  button {
-    background: $button-color;
-    border-radius: $button-border-radius;
-    padding: $button-padding;
+  input {
+    background-color: $white-background-color;
+    border-radius: 6px;
+  }
+
+  input:focus {
+    background-color: $input-focus-color;
+    outline: none;
+  }
+
+  #tic-tac-toe {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: $tic-tac-toe-font-size;
+    justify-content: center;
+  }
+
+  .game-container {
+    margin: $element-margin;
+
+    p {
+      font-size: $board-font-size;
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  .board-top-row,
+  .board-middle-row,
+  .board-bottom-row {
+    display: flex;
+  }
+
+  .board-top-row,
+  .board-middle-row {
+    border-bottom: 5px solid $border-color;
+  }
+
+  .border-right {
+    border-right: 5px solid $border-color;
+  }
+
+  .game-box {
+    background-color: $white-background-color;
+    height: 150px;
+    width: 150px;
   }
 }

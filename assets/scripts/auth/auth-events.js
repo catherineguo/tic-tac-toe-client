@@ -7,11 +7,13 @@ const authUi = require('./auth-ui.js')
 const showSignUp = (event) => {
   $('#sign-up-container').show()
   $('#sign-in-container').hide()
+  $('#user-auth-message').html('')
 }
 
 const showSignIn = (event) => {
   $('#sign-in-container').show()
   $('#sign-up-container').hide()
+  $('#user-auth-message').html('')
 }
 
 const onSignUp = (event) => {

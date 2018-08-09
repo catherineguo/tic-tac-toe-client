@@ -9,6 +9,7 @@ const signUpSuccess = (response) => {
   $('#sign-in input').val('')
   $('#sign-up-container').hide()
   $('#sign-in-container').show()
+  $('#sign-in-container a').hide()
 }
 
 const signUpFail = () => {
@@ -40,6 +41,7 @@ const changePasswordFail = () => {
 
 const signOutSuccess = () => {
   $('#sign-in-container').show()
+  $('#sign-in-container a').show()
   $('#tic-tac-toe').hide()
 }
 
