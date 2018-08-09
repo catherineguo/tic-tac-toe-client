@@ -4,7 +4,6 @@ const store = require('../store.js')
 const gameEngine = require('../game/game-logic.js')
 
 const signUpSuccess = (response) => {
-  console.log(response)
   $('#user-auth-message').html("<p>You've signed up! Now sign in.</p>")
   $('#sign-up input').val('')
   $('#sign-up-container').hide()
@@ -45,8 +44,6 @@ const signOutSuccess = () => {
 
 const signOutFail = () => {
   $('#user-auth-message').html('<p>Sign out failed.</p>')
-  $('#message').removeClass()
-  $('#message').addClass('fail')
 }
 
 module.exports = {
