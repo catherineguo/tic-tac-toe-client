@@ -6,6 +6,7 @@ const gameEngine = require('../game/game-logic.js')
 const signUpSuccess = (response) => {
   $('#user-auth-message').html("<p>You've signed up! Now sign in.</p>")
   $('#sign-up input').val('')
+  $('#sign-in input').val('')
   $('#sign-up-container').hide()
   $('#sign-in-container').show()
 }
