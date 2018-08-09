@@ -27,26 +27,24 @@ const signInFail = () => {
 }
 
 const changePasswordSuccess = () => {
-  $('#message').text('Password changed.')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#user-auth-message').html('<p>Password changed.</p>')
   $('#change-password input').val('')
+  $('#change-password-container').hide()
 }
 
 const changePasswordFail = () => {
-  $('#message').text('Failed to change password.')
+  $('#user-auth-message').html('<p>Failed to change password.</p>')
   $('#message').removeClass()
   $('#message').addClass('fail')
 }
 
 const signOutSuccess = () => {
-  $('#message').text('Signed out.')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#sign-in-container').show()
+  $('#tic-tac-toe').hide()
 }
 
 const signOutFail = () => {
-  $('#message').text('Sign out failed.')
+  $('#user-auth-message').html('<p>Sign out failed.</p>')
   $('#message').removeClass()
   $('#message').addClass('fail')
 }

@@ -42,12 +42,17 @@ const onSignOut = (event) => {
     .catch(authUi.signOutFail)
 }
 
+const showChangePassword = (event) => {
+  $('#change-password-container').show()
+}
+
 const addHandlers = () => {
   $('#sign-up-link').on('click', showSignUp)
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('click', onSignOut)
+  $('#change-password-link').on('click', showChangePassword)
 }
 
 module.exports = {
