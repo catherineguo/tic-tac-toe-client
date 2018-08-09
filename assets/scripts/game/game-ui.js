@@ -24,9 +24,33 @@ const addMark = (indexNum, currentPlayer) => {
 
 const clearBoard = () => {
   $('#game-container div div').html('')
+  $('#message-box').html(`<p>Player 1's turn</p>`)
+}
+
+const turnMessage = (currentPlayer) => {
+  if (currentPlayer === 'x') {
+    $('#message-box').html(`<p>Player 1's turn</p>`)
+  } else {
+    $('#message-box').html(`<p>Player 2's turn</p>`)
+  }
+}
+
+const winMessage = (winner) => {
+  if (winner === 'x') {
+    $('#message-box').html(`<p>Player 1 wins!</p>`)
+  } else {
+    $('#message-box').html(`<p>Player 2 wins!</p>`)
+  }
+}
+
+const invalidMoveMessage = () => {
+  $('#message-box p').text(`That spot is taken!`)
 }
 
 module.exports = {
   addMark,
-  clearBoard
+  clearBoard,
+  turnMessage,
+  winMessage,
+  invalidMoveMessage
 }

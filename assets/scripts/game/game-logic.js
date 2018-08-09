@@ -11,20 +11,23 @@ let currentBoard = ['', '', '', '', '', '', '', '', '']
 let currentPlayer = 'x'
 
 const addCurrentPlayer = (indexNum) => {
-  if (currentBoard[indexNum]) {
+  if (currentBoard.every(isBoardFull)) {
+  } else if (currentBoard[indexNum]) {
+    ui.invalidMoveMessage()
   } else {
     currentBoard[indexNum] = currentPlayer
     ui.addMark(indexNum, currentPlayer)
     checkWin()
-    switchPlayers()
   }
 }
 
 const switchPlayers = () => {
   if (currentPlayer === 'x') {
     currentPlayer = 'o'
+    ui.turnMessage(currentPlayer)
   } else {
     currentPlayer = 'x'
+    ui.turnMessage(currentPlayer)
   }
 }
 
@@ -42,42 +45,43 @@ const isBoardFull = (spot) => {
   }
 }
 
-
 const checkWin = () => {
   if ((currentBoard[0] === 'x' && currentBoard[1] === 'x' && currentBoard[2] === 'x') ||
   (currentBoard[0] === 'o' && currentBoard[1] === 'o' && currentBoard[2] === 'o')) {
-    console.log('first row win!')
+    ui.winMessage(currentBoard[0])
     currentBoard = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
   } else if ((currentBoard[3] === 'x' && currentBoard[4] === 'x' && currentBoard[5] === 'x') ||
   (currentBoard[3] === 'o' && currentBoard[4] === 'o' && currentBoard[5] === 'o')) {
-    console.log('second row win!')
+    ui.winMessage(currentBoard[3])
     currentBoard = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
   } else if ((currentBoard[6] === 'x' && currentBoard[7] === 'x' && currentBoard[8] === 'x') ||
   (currentBoard[6] === 'o' && currentBoard[7] === 'o' && currentBoard[8] === 'o')) {
-    console.log('third row win!')
+    ui.winMessage(currentBoard[6])
     currentBoard = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
   } else if ((currentBoard[0] === 'x' && currentBoard[3] === 'x' && currentBoard[6] === 'x') ||
   (currentBoard[0] === 'o' && currentBoard[3] === 'o' && currentBoard[6] === 'o')) {
-    console.log('first column win!')
+    ui.winMessage(currentBoard[0])
     currentBoard = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
   } else if ((currentBoard[1] === 'x' && currentBoard[4] === 'x' && currentBoard[7] === 'x') ||
   (currentBoard[1] === 'o' && currentBoard[4] === 'o' && currentBoard[7] === 'o')) {
-    console.log('second column win!')
+    ui.winMessage(currentBoard[1])
     currentBoard = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
   } else if ((currentBoard[2] === 'x' && currentBoard[5] === 'x' && currentBoard[8] === 'x') ||
   (currentBoard[2] === 'o' && currentBoard[5] === 'o' && currentBoard[8] === 'o')) {
-    console.log('third column win!')
+    ui.winMessage(currentBoard[2])
     currentBoard = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
   } else if ((currentBoard[0] === 'x' && currentBoard[4] === 'x' && currentBoard[8] === 'x') ||
   (currentBoard[0] === 'o' && currentBoard[4] === 'o' && currentBoard[8] === 'o')) {
-    console.log('diagonal towards right win!')
+    ui.winMessage(currentBoard[0])
     currentBoard = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
   } else if ((currentBoard[2] === 'x' && currentBoard[4] === 'x' && currentBoard[6] === 'x') ||
   (currentBoard[2] === 'o' && currentBoard[4] === 'o' && currentBoard[6] === 'o')) {
-    console.log('diagonal towards left win!')
+    ui.winMessage(currentBoard[2])
     currentBoard = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
   } else if (currentBoard.every(isBoardFull)) {
-    console.log("it's a draw!")
+    $('#message-box').html(`<p>It's a draw!</p>`)
+  } else {
+    switchPlayers()
   }
 }
 
