@@ -9,6 +9,7 @@ const gameEvents = require('./game/game-events.js')
 const authEvents = require('./auth/auth-events.js')
 
 $(() => {
+  $('#tic-tac-toe').hide()
   gameEvents.addHandlers()
   authEvents.addHandlers()
 })

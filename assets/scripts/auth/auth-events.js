@@ -13,11 +13,35 @@ const onSignUp = (event) => {
     .catch(authUi.signUpFail)
 }
 
+const onSignIn = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log(data)
+  authApi.signIn(data)
+    .then(authUi.signInSuccess)
+    .catch(authUi.signInFail)
+}
+
+const onChangePassword = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log(data)
+  authApi.changePassword(data)
+    .then(authUi.changePasswordSuccess)
+    .catch(authUi.changePasswordFail)
+}
+
+const onSignOut = (event) => {
+  authApi.signOut()
+    .then(authUi.signOutSuccess)
+    .catch(authUi.signOutFail)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
-  // $('#sign-in').on('submit', onSignIn)
-  // $('#change-password').on('submit', onChangePassword)
-  // $('#sign-out').on('click', onSignOut)
+  $('#sign-in').on('submit', onSignIn)
+  $('#change-password').on('submit', onChangePassword)
+  $('#sign-out').on('click', onSignOut)
 }
 
 module.exports = {
