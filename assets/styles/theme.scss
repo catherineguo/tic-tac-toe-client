@@ -1,0 +1,36 @@
+body {
+  background-color: $background-color;
+  color: $font-color;
+  font-size: $body-font-size;
+  line-height: $body-line-height;
+  margin: $margin;
+  padding: $body-padding;
+
+  a {
+    color: $link-color;
+  }
+
+  a:hover {
+    color: $link-hover-color;
+  }
+
+  h1 {
+    font-size: $header-font-size;
+    line-height: $header-line-height;
+    margin: $element-margin;
+  }
+
+  p {
+    margin: $element-margin;
+  }
+
+  form {
+    margin: $element-margin;
+  }
+
+  button {
+    background: $button-color;
+    border-radius: $button-border-radius;
+    padding: $button-padding;
+  }
+}
