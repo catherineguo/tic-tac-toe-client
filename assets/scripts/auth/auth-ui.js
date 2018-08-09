@@ -4,31 +4,26 @@ const store = require('../store.js')
 
 const signUpSuccess = (response) => {
   console.log(response)
-  $('#message').text("You've signed up!")
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#user-auth-message').html("<p>You've signed up! Now sign in.</p>")
   $('#sign-up input').val('')
+  $('#sign-up-container').hide()
+  $('#sign-in-container').show()
 }
 
 const signUpFail = () => {
-  $('#message').text('Sorry, try again. Check that your passwords match.')
-  $('#message').removeClass()
-  $('#message').addClass('fail')
+  $('#user-auth-message').html('<p>Sorry, try again. Check that your passwords match.</p>')
 }
 
 const signInSuccess = (response) => {
-  console.log(response)
-  $('#message').text("You're signed in!")
-  $('#message').removeClass()
-  $('#message').addClass('success')
   $('#sign-in input').val('')
+  $('#user-auth-message').html('')
   store.user = response.user
+  $('#tic-tac-toe').show()
+  $('#sign-in-container').hide()
 }
 
 const signInFail = () => {
-  $('#message').text('Oops, try again.')
-  $('#message').removeClass()
-  $('#message').addClass('fail')
+  $('#user-auth-message').html('<p>Oops, try again.</p>')
 }
 
 const changePasswordSuccess = () => {

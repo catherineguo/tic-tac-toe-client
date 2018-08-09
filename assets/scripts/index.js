@@ -10,6 +10,8 @@ const authEvents = require('./auth/auth-events.js')
 
 $(() => {
   $('#tic-tac-toe').hide()
+  $('#sign-up-container').hide()
+  $('#change-password-container').hide()
   gameEvents.addHandlers()
   authEvents.addHandlers()
 })

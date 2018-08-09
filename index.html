@@ -12,38 +12,45 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Sign Up</h1>
-      <form id='sign-up'>
-        <fieldset>
-          <input type="email" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <button type="submit">Sign Up</button>
-        </fieldset>
-      </form>
+      <section id="user-auth-message">
+      </section>
 
-      <h1>Sign In</h1>
-      <form id='sign-in'>
-        <fieldset>
-          <input type="email" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <button type="submit">Sign In</button>
-        </fieldset>
-      </form>
+      <section id="sign-up-container">
+        <h1>Sign Up</h1>
+        <form id='sign-up'>
+          <fieldset>
+            <input type="email" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <button type="submit">Sign Up</button>
+          </fieldset>
+        </form>
+      </section>
 
-      <h1>Change Password</h1>
-      <form id='change-password'>
-        <fieldset>
-          <input type="password" name="passwords[old]" placeholder="Old Password">
-          <input type="password" name="passwords[new]" placeholder="New Password">
-          <button type="submit">Change Password</button>
-        </fieldset>
-      </form>
+      <section id="sign-in-container">
+        <h1>Sign In</h1>
+        <form id='sign-in'>
+          <fieldset>
+            <input type="email" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <button type="submit">Sign In</button>
+          </fieldset>
+        </form>
+        <a href="#" id="sign-up-link">I need to sign up for an account.</a>
+      </section>
 
-      <h1>Sign Out</h1>
-      <button id="sign-out">Sign Out</button>
+      <section id="change-password-container">
+        <h1>Change Password</h1>
+        <form id='change-password'>
+          <fieldset>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <input type="password" name="passwords[new]" placeholder="New Password">
+            <button type="submit">Change Password</button>
+          </fieldset>
+        </form>
+      </section>
 
-      <div id="tic-tac-toe">
+      <section id="tic-tac-toe">
       <h1>Tic Tac Toe</h1>
       <button type="button" class="btn btn-primary" id="new-game-button">New Game</button>
       <section id="message-box" style="margin-bottom: 20px; margin-top:20px;">
@@ -66,6 +73,8 @@
             <div class= "game-box" id="bottomRight"></div>
           </div>
         </div>
-      </div>
+        <button id="sign-out">Sign Out</button>
+
+      </section>
     </body>
 </html>

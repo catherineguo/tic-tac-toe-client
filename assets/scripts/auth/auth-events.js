@@ -4,6 +4,11 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const authApi = require('./auth-api.js')
 const authUi = require('./auth-ui.js')
 
+const showSignUp = (event) => {
+  $('#sign-up-container').show()
+  $('#sign-in-container').hide()
+}
+
 const onSignUp = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -38,6 +43,7 @@ const onSignOut = (event) => {
 }
 
 const addHandlers = () => {
+  $('#sign-up-link').on('click', showSignUp)
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
