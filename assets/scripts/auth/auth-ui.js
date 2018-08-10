@@ -30,12 +30,14 @@ const signInFail = () => {
 }
 
 const changePasswordSuccess = () => {
+  $(window).scrollTop(0)
   $('#change-password input').val('')
   $('#change-password-container').hide()
   $('#password-change-success').show('fast').delay(800).hide('slow')
 }
 
 const changePasswordFail = () => {
+  $(window).scrollTop(0)
   $('#password-change-fail').show('fast').delay(800).hide('slow')
 }
 

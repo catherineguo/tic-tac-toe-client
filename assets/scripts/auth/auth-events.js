@@ -48,6 +48,9 @@ const onSignOut = (event) => {
 
 const toggleChangePassword = (event) => {
   $('#change-password-container').toggle()
+  $('html, body').animate({
+    scrollTop: $('#change-password-container').offset().top
+  }, 1000)
   $('#change-password input').val('')
 }
 

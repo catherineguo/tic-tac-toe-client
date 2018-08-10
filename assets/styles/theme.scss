@@ -25,7 +25,6 @@ body {
   h1 {
     font-size: $header-font-size;
     line-height: $header-line-height;
-    margin: $element-margin;
   }
 
   p {
@@ -39,6 +38,7 @@ body {
   input {
     background-color: $white-background-color;
     border-radius: 6px;
+    margin-bottom: 10px;
   }
 
   input:focus {
@@ -47,11 +47,27 @@ body {
   }
 
   #tic-tac-toe {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
     font-size: $tic-tac-toe-font-size;
-    justify-content: center;
+
+    h1 {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    #new-game-button {
+      display: block;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+  }
+
+  .section-container {
+    background-color: $section-background-color;
+    border-radius: 30px;
+    padding: 10px 50px 30px;
   }
 
   .game-container {
@@ -81,7 +97,7 @@ body {
 
   .game-box {
     background-color: $white-background-color;
-    height: 150px;
-    width: 150px;
+    height: 125px;
+    width: 125px;
   }
 }

@@ -15,26 +15,26 @@
       <section id="user-auth-message">
       </section>
 
-      <section id="sign-up-container">
+      <section class="section-container" id="sign-up-container">
         <h1>Sign Up</h1>
-        <form id='sign-up'>
+        <form class="form-signin" id='sign-up'>
           <fieldset>
-            <input type="email" name="credentials[email]" placeholder="Email">
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-            <button type="submit" class="btn btn-info">Sign Up</button>
+            <input type="email" class="form-control input-lg" name="credentials[email]" placeholder="Email">
+            <input type="password" class="form-control input-lg" name="credentials[password]" placeholder="Password">
+            <input type="password" class="form-control input-lg" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <button type="submit" class="btn btn-lg btn-info btn-block">Sign Up</button>
           </fieldset>
         </form>
         <a href="#" id="back-to-signin">Take me back to sign-in page</a>
       </section>
 
-      <section id="sign-in-container">
+      <section class="section-container" id="sign-in-container">
         <h1>Sign In</h1>
-        <form id='sign-in'>
+        <form class="form-signin" id='sign-in'>
           <fieldset>
-            <input type="email" name="credentials[email]" placeholder="Email">
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <button type="submit" class="btn btn-info">Sign In</button>
+            <input type="email" class="form-control input-lg" name="credentials[email]" placeholder="Email">
+            <input type="password" class="form-control input-lg" name="credentials[password]" placeholder="Password">
+            <button type="submit" class="btn btn-lg btn-info btn-block">Sign In</button>
           </fieldset>
         </form>
         <a href="#" id="sign-up-link">I need to sign up for an account</a>
@@ -49,30 +49,30 @@
           <p>Failed to change password.</p>
         </section>
 
-      <h1>Tic Tac Toe</h1>
-      <button type="button" class="btn btn-info" id="new-game-button">New Game</button>
-      <section id="message-box">
-        <p>Player 1's turn</p>
-      </section>
-        <div class="game-container" id="game-container">
-          <div class="board-top-row">
-            <div class= "game-box border-right" id="topLeft"></div>
-            <div class= "game-box border-right" id="topMiddle"></div>
-            <div class= "game-box" id="topRight"></div>
+        <h1>Tic Tac Toe</h1>
+        <button type="button" class="btn btn-info" id="new-game-button">New Game</button>
+        <section id="message-box">
+          <p>Player 1's turn</p>
+        </section>
+          <div class="game-container" id="game-container">
+            <div class="board-top-row">
+              <div class= "game-box border-right" id="topLeft"></div>
+              <div class= "game-box border-right" id="topMiddle"></div>
+              <div class= "game-box" id="topRight"></div>
+            </div>
+            <div class="board-middle-row">
+              <div class= "game-box border-right" id="middleLeft"></div>
+              <div class= "game-box border-right" id="middleMiddle"></div>
+              <div class= "game-box" id="middleRight"></div>
+            </div>
+            <div class="board-bottom-row">
+              <div class= "game-box border-right" id="bottomLeft"></div>
+              <div class= "game-box border-right" id="bottomMiddle"></div>
+              <div class= "game-box" id="bottomRight"></div>
+            </div>
           </div>
-          <div class="board-middle-row">
-            <div class= "game-box border-right" id="middleLeft"></div>
-            <div class= "game-box border-right" id="middleMiddle"></div>
-            <div class= "game-box" id="middleRight"></div>
-          </div>
-          <div class="board-bottom-row">
-            <div class= "game-box border-right" id="bottomLeft"></div>
-            <div class= "game-box border-right" id="bottomMiddle"></div>
-            <div class= "game-box" id="bottomRight"></div>
-          </div>
-        </div>
-        <button type="button" class="btn btn-info" id="sign-out">Sign Out</button>
-        <a href="#" id="change-password-link">Change Password</a>
+          <button type="button" class="btn btn-info" id="sign-out">Sign Out</button>
+          <button type="button" class="btn btn-info" id="change-password-link">Change Password</button>
       </section>
 
       <section id="change-password-container">
