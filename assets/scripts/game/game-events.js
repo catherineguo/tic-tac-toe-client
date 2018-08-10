@@ -2,6 +2,7 @@
 
 const gameEngine = require('./game-logic.js')
 const gameApi = require('./game-api.js')
+const ui = require('./game-ui.js')
 
 const newGame = () => {
   gameApi.createGame()
@@ -10,75 +11,138 @@ const newGame = () => {
 }
 
 const addTopLeft = () => {
-  const value = gameEngine.shareCurrentPlayer()
-  const isGameOver = gameEngine.shareWinStatus()
-  gameApi.updateGame(0, value, isGameOver)
-    .then(gameEngine.updateGameSuccessTL)
-    .catch(gameEngine.updateGameFail)
+  const canContinue = gameEngine.canContinue()
+  if (!canContinue) {
+  } else if (!gameEngine.canAddPlayer(0)) {
+    ui.invalidMoveMessage()
+  } else {
+    const value = gameEngine.shareCurrentPlayer()
+    gameEngine.updateCurrentBoard(0)
+    const boolean = !gameEngine.canContinue()
+    gameApi.updateGame(0, value, boolean)
+      .then(gameEngine.updateGameSuccessTL)
+      .catch(gameEngine.updateGameFail)
+  }
 }
 
 const addTopMiddle = () => {
-  const value = gameEngine.shareCurrentPlayer()
-  const isGameOver = gameEngine.shareWinStatus()
-  gameApi.updateGame(1, value, isGameOver)
-    .then(gameEngine.updateGameSuccessTM)
-    .catch(gameEngine.updateGameFail)
+  const canContinue = gameEngine.canContinue()
+  if (!canContinue) {
+  } else if (!gameEngine.canAddPlayer(1)) {
+    ui.invalidMoveMessage()
+  } else {
+    const value = gameEngine.shareCurrentPlayer()
+    gameEngine.updateCurrentBoard(1)
+    const boolean = !gameEngine.canContinue()
+    gameApi.updateGame(1, value, boolean)
+      .then(gameEngine.updateGameSuccessTM)
+      .catch(gameEngine.updateGameFail)
+  }
 }
 
 const addTopRight = () => {
-  const value = gameEngine.shareCurrentPlayer()
-  const isGameOver = gameEngine.shareWinStatus()
-  gameApi.updateGame(2, value, isGameOver)
-    .then(gameEngine.updateGameSuccessTR)
-    .catch(gameEngine.updateGameFail)
+  const canContinue = gameEngine.canContinue()
+  if (!canContinue) {
+  } else if (!gameEngine.canAddPlayer(2)) {
+    ui.invalidMoveMessage()
+  } else {
+    const value = gameEngine.shareCurrentPlayer()
+    gameEngine.updateCurrentBoard(2)
+    const boolean = !gameEngine.canContinue()
+    gameApi.updateGame(2, value, boolean)
+      .then(gameEngine.updateGameSuccessTR)
+      .catch(gameEngine.updateGameFail)
+  }
 }
 
 const addMiddleLeft = () => {
-  const value = gameEngine.shareCurrentPlayer()
-  const isGameOver = gameEngine.shareWinStatus()
-  gameApi.updateGame(3, value, isGameOver)
-    .then(gameEngine.updateGameSuccessML)
-    .catch(gameEngine.updateGameFail)
+  const canContinue = gameEngine.canContinue()
+  if (!canContinue) {
+  } else if (!gameEngine.canAddPlayer(3)) {
+    ui.invalidMoveMessage()
+  } else {
+    const value = gameEngine.shareCurrentPlayer()
+    gameEngine.updateCurrentBoard(3)
+    const boolean = !gameEngine.canContinue()
+    gameApi.updateGame(3, value, boolean)
+      .then(gameEngine.updateGameSuccessML)
+      .catch(gameEngine.updateGameFail)
+  }
 }
 
 const addMiddleMiddle = () => {
-  const value = gameEngine.shareCurrentPlayer()
-  const isGameOver = gameEngine.shareWinStatus()
-  gameApi.updateGame(4, value, isGameOver)
-    .then(gameEngine.updateGameSuccessMM)
-    .catch(gameEngine.updateGameFail)
+  const canContinue = gameEngine.canContinue()
+  if (!canContinue) {
+  } else if (!gameEngine.canAddPlayer(4)) {
+    ui.invalidMoveMessage()
+  } else {
+    const value = gameEngine.shareCurrentPlayer()
+    gameEngine.updateCurrentBoard(4)
+    const boolean = !gameEngine.canContinue()
+    gameApi.updateGame(4, value, boolean)
+      .then(gameEngine.updateGameSuccessMM)
+      .catch(gameEngine.updateGameFail)
+  }
 }
 
 const addMiddleRight = () => {
-  const value = gameEngine.shareCurrentPlayer()
-  const isGameOver = gameEngine.shareWinStatus()
-  gameApi.updateGame(5, value, isGameOver)
-    .then(gameEngine.updateGameSuccessMR)
-    .catch(gameEngine.updateGameFail)
+  const canContinue = gameEngine.canContinue()
+  if (!canContinue) {
+  } else if (!gameEngine.canAddPlayer(5)) {
+    ui.invalidMoveMessage()
+  } else {
+    const value = gameEngine.shareCurrentPlayer()
+    gameEngine.updateCurrentBoard(5)
+    const boolean = !gameEngine.canContinue()
+    gameApi.updateGame(5, value, boolean)
+      .then(gameEngine.updateGameSuccessMR)
+      .catch(gameEngine.updateGameFail)
+  }
 }
 
 const addBottomLeft = () => {
-  const value = gameEngine.shareCurrentPlayer()
-  const isGameOver = gameEngine.shareWinStatus()
-  gameApi.updateGame(6, value, isGameOver)
-    .then(gameEngine.updateGameSuccessBL)
-    .catch(gameEngine.updateGameFail)
+  const canContinue = gameEngine.canContinue()
+  if (!canContinue) {
+  } else if (!gameEngine.canAddPlayer(6)) {
+    ui.invalidMoveMessage()
+  } else {
+    const value = gameEngine.shareCurrentPlayer()
+    gameEngine.updateCurrentBoard(6)
+    const boolean = !gameEngine.canContinue()
+    gameApi.updateGame(6, value, boolean)
+      .then(gameEngine.updateGameSuccessBL)
+      .catch(gameEngine.updateGameFail)
+  }
 }
 
 const addBottomMiddle = () => {
-  const value = gameEngine.shareCurrentPlayer()
-  const isGameOver = gameEngine.shareWinStatus()
-  gameApi.updateGame(7, value, isGameOver)
-    .then(gameEngine.updateGameSuccessBM)
-    .catch(gameEngine.updateGameFail)
+  const canContinue = gameEngine.canContinue()
+  if (!canContinue) {
+  } else if (!gameEngine.canAddPlayer(7)) {
+    ui.invalidMoveMessage()
+  } else {
+    const value = gameEngine.shareCurrentPlayer()
+    gameEngine.updateCurrentBoard(7)
+    const boolean = !gameEngine.canContinue()
+    gameApi.updateGame(7, value, boolean)
+      .then(gameEngine.updateGameSuccessBM)
+      .catch(gameEngine.updateGameFail)
+  }
 }
 
 const addBottomRight = () => {
-  const value = gameEngine.shareCurrentPlayer()
-  const isGameOver = gameEngine.shareWinStatus()
-  gameApi.updateGame(8, value, isGameOver)
-    .then(gameEngine.updateGameSuccessBR)
-    .catch(gameEngine.updateGameFail)
+  const canContinue = gameEngine.canContinue()
+  if (!canContinue) {
+  } else if (!gameEngine.canAddPlayer(8)) {
+    ui.invalidMoveMessage()
+  } else {
+    const value = gameEngine.shareCurrentPlayer()
+    gameEngine.updateCurrentBoard(8)
+    const boolean = !gameEngine.canContinue()
+    gameApi.updateGame(8, value, boolean)
+      .then(gameEngine.updateGameSuccessBR)
+      .catch(gameEngine.updateGameFail)
+  }
 }
 
 const addHandlers = () => {

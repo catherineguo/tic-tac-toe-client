@@ -1,5 +1,16 @@
 'use strict'
 
+const addCurrentPlayer = (indexNum, currentPlayer, winOrDraw) => {
+  addMark(indexNum, currentPlayer)
+  if (winOrDraw === '') {
+    turnMessage(currentPlayer)
+  } else if (winOrDraw === 'win') {
+    winMessage(currentPlayer)
+  } else {
+    $('#message-box').html(`<p>It's a draw!</p>`)
+  }
+}
+
 const addMark = (indexNum, currentPlayer) => {
   if (indexNum === 0) {
     $('#topLeft').html(`<p>${currentPlayer}</p>`)
@@ -28,7 +39,7 @@ const clearBoard = () => {
 }
 
 const turnMessage = (currentPlayer) => {
-  if (currentPlayer === 'x') {
+  if (currentPlayer === 'o') {
     $('#message-box').html(`<p>Player 1's turn</p>`)
   } else {
     $('#message-box').html(`<p>Player 2's turn</p>`)
@@ -48,6 +59,7 @@ const invalidMoveMessage = () => {
 }
 
 module.exports = {
+  addCurrentPlayer,
   addMark,
   clearBoard,
   turnMessage,

@@ -10,45 +10,11 @@ const store = require('../store.js')
 
 let currentBoard = ['', '', '', '', '', '', '', '', '']
 let currentPlayer = 'x'
-
-const shareCurrentPlayer = () => {
-  return currentPlayer
-}
-
-const shareWinStatus = () => {
-  if ((currentBoard[0] === 'x' && currentBoard[1] === 'x' && currentBoard[2] === 'x') ||
-  (currentBoard[0] === 'o' && currentBoard[1] === 'o' && currentBoard[2] === 'o')) {
-    return true
-  } else if ((currentBoard[3] === 'x' && currentBoard[4] === 'x' && currentBoard[5] === 'x') ||
-  (currentBoard[3] === 'o' && currentBoard[4] === 'o' && currentBoard[5] === 'o')) {
-    return true
-  } else if ((currentBoard[6] === 'x' && currentBoard[7] === 'x' && currentBoard[8] === 'x') ||
-  (currentBoard[6] === 'o' && currentBoard[7] === 'o' && currentBoard[8] === 'o')) {
-    return true
-  } else if ((currentBoard[0] === 'x' && currentBoard[3] === 'x' && currentBoard[6] === 'x') ||
-  (currentBoard[0] === 'o' && currentBoard[3] === 'o' && currentBoard[6] === 'o')) {
-    return true
-  } else if ((currentBoard[1] === 'x' && currentBoard[4] === 'x' && currentBoard[7] === 'x') ||
-  (currentBoard[1] === 'o' && currentBoard[4] === 'o' && currentBoard[7] === 'o')) {
-    return true
-  } else if ((currentBoard[2] === 'x' && currentBoard[5] === 'x' && currentBoard[8] === 'x') ||
-  (currentBoard[2] === 'o' && currentBoard[5] === 'o' && currentBoard[8] === 'o')) {
-    return true
-  } else if ((currentBoard[0] === 'x' && currentBoard[4] === 'x' && currentBoard[8] === 'x') ||
-  (currentBoard[0] === 'o' && currentBoard[4] === 'o' && currentBoard[8] === 'o')) {
-    return true
-  } else if ((currentBoard[2] === 'x' && currentBoard[4] === 'x' && currentBoard[6] === 'x') ||
-  (currentBoard[2] === 'o' && currentBoard[4] === 'o' && currentBoard[6] === 'o')) {
-    return true
-  } else if (currentBoard.every(isBoardFull)) {
-    return true
-  } else {
-    return false
-  }
-}
+let winOrDraw = ''
 
 const createGameSuccess = (response) => {
   store.game = response.game
+  console.log(`this is store`, store)
   resetBoard()
   $('#start-new-game').hide()
   $('#tic-tac-toe').show()
@@ -58,91 +24,128 @@ const createGameFail = () => {
   $('#user-auth-message').html('<p>Sorry, making a new game failed.</p>').addClass('alert alert-danger')
 }
 
+const shareCurrentPlayer = () => {
+  return currentPlayer
+}
+
+const canContinue = () => {
+  if (winOrDraw === 'win' || winOrDraw === 'draw') {
+    return false
+  } else {
+    return true
+  }
+}
+
+const canAddPlayer = (indexNum) => {
+  if (currentBoard[indexNum]) {
+    return false
+  } else {
+    return true
+  }
+}
+
+const updateCurrentBoard = (indexNum) => {
+  currentBoard[indexNum] = currentPlayer
+  checkWin()
+}
+
 const updateGameFail = () => {
   $('#user-auth-message').html('<p>Sorry, something went wrong.</p>').addClass('alert alert-danger')
 }
 
 const updateGameSuccessTL = (response) => {
   store.game = response.game
-  console.log(`this is store`, store)
-  // if (shareWinStatus && ) {
-  //
-  // }
-  addCurrentPlayer(0)
+  console.log(`this is the store`, store)
+  switchPlayers()
+  console.log(`this is the current player`, currentPlayer)
+  console.log(`this is the current board`, currentBoard)
+  ui.addCurrentPlayer(0, currentPlayer, winOrDraw)
 }
 
 const updateGameSuccessTM = (response) => {
   store.game = response.game
-  console.log(`this is store`, store)
-  addCurrentPlayer(1)
+  console.log(`this is the store`, store)
+  switchPlayers()
+  console.log(`this is the current player`, currentPlayer)
+  console.log(`this is the current board`, currentBoard)
+  ui.addCurrentPlayer(1, currentPlayer, winOrDraw)
 }
 
 const updateGameSuccessTR = (response) => {
   store.game = response.game
-  console.log(`this is store`, store)
-  addCurrentPlayer(2)
+  console.log(`this is the store`, store)
+  switchPlayers()
+  console.log(`this is the current player`, currentPlayer)
+  console.log(`this is the current board`, currentBoard)
+  ui.addCurrentPlayer(2, currentPlayer, winOrDraw)
 }
 
 const updateGameSuccessML = (response) => {
   store.game = response.game
-  console.log(`this is store`, store)
-  addCurrentPlayer(3)
+  console.log(`this is the store`, store)
+  switchPlayers()
+  console.log(`this is the current player`, currentPlayer)
+  console.log(`this is the current board`, currentBoard)
+  ui.addCurrentPlayer(3, currentPlayer, winOrDraw)
 }
 
 const updateGameSuccessMM = (response) => {
   store.game = response.game
-  console.log(`this is store`, store)
-  addCurrentPlayer(4)
+  console.log(`this is the store`, store)
+  switchPlayers()
+  console.log(`this is the current player`, currentPlayer)
+  console.log(`this is the current board`, currentBoard)
+  ui.addCurrentPlayer(4, currentPlayer, winOrDraw)
 }
 
 const updateGameSuccessMR = (response) => {
   store.game = response.game
-  console.log(`this is store`, store)
-  addCurrentPlayer(5)
+  console.log(`this is the store`, store)
+  switchPlayers()
+  console.log(`this is the current player`, currentPlayer)
+  console.log(`this is the current board`, currentBoard)
+  ui.addCurrentPlayer(5, currentPlayer, winOrDraw)
 }
 
 const updateGameSuccessBL = (response) => {
   store.game = response.game
-  console.log(`this is store`, store)
-  addCurrentPlayer(6)
+  console.log(`this is the store`, store)
+  switchPlayers()
+  console.log(`this is the current player`, currentPlayer)
+  console.log(`this is the current board`, currentBoard)
+  ui.addCurrentPlayer(6, currentPlayer, winOrDraw)
 }
 
 const updateGameSuccessBM = (response) => {
   store.game = response.game
-  console.log(`this is store`, store)
-  addCurrentPlayer(7)
+  console.log(`this is the store`, store)
+  switchPlayers()
+  console.log(`this is the current player`, currentPlayer)
+  console.log(`this is the current board`, currentBoard)
+  ui.addCurrentPlayer(7, currentPlayer, winOrDraw)
 }
 
 const updateGameSuccessBR = (response) => {
   store.game = response.game
-  console.log(`this is store`, store)
-  addCurrentPlayer(8)
-}
-
-const addCurrentPlayer = (indexNum) => {
-  if (currentBoard.every(isBoardFull)) {
-  } else if (currentBoard[indexNum]) {
-    ui.invalidMoveMessage()
-  } else {
-    currentBoard[indexNum] = currentPlayer
-    ui.addMark(indexNum, currentPlayer)
-    checkWin()
-  }
+  console.log(`this is the store`, store)
+  switchPlayers()
+  console.log(`this is the current player`, currentPlayer)
+  console.log(`this is the current board`, currentBoard)
+  ui.addCurrentPlayer(8, currentPlayer, winOrDraw)
 }
 
 const switchPlayers = () => {
   if (currentPlayer === 'x') {
     currentPlayer = 'o'
-    ui.turnMessage(currentPlayer)
   } else {
     currentPlayer = 'x'
-    ui.turnMessage(currentPlayer)
   }
 }
 
 const resetBoard = () => {
   currentBoard = ['', '', '', '', '', '', '', '', '']
   currentPlayer = 'x'
+  winOrDraw = ''
   ui.clearBoard()
 }
 
@@ -157,52 +160,42 @@ const isBoardFull = (spot) => {
 const checkWin = () => {
   if ((currentBoard[0] === 'x' && currentBoard[1] === 'x' && currentBoard[2] === 'x') ||
   (currentBoard[0] === 'o' && currentBoard[1] === 'o' && currentBoard[2] === 'o')) {
-    ui.winMessage(currentBoard[0])
-    currentBoard = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
+    winOrDraw = 'win'
   } else if ((currentBoard[3] === 'x' && currentBoard[4] === 'x' && currentBoard[5] === 'x') ||
   (currentBoard[3] === 'o' && currentBoard[4] === 'o' && currentBoard[5] === 'o')) {
-    ui.winMessage(currentBoard[3])
-    currentBoard = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
+    winOrDraw = 'win'
   } else if ((currentBoard[6] === 'x' && currentBoard[7] === 'x' && currentBoard[8] === 'x') ||
   (currentBoard[6] === 'o' && currentBoard[7] === 'o' && currentBoard[8] === 'o')) {
-    ui.winMessage(currentBoard[6])
-    currentBoard = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
+    winOrDraw = 'win'
   } else if ((currentBoard[0] === 'x' && currentBoard[3] === 'x' && currentBoard[6] === 'x') ||
   (currentBoard[0] === 'o' && currentBoard[3] === 'o' && currentBoard[6] === 'o')) {
-    ui.winMessage(currentBoard[0])
-    currentBoard = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
+    winOrDraw = 'win'
   } else if ((currentBoard[1] === 'x' && currentBoard[4] === 'x' && currentBoard[7] === 'x') ||
   (currentBoard[1] === 'o' && currentBoard[4] === 'o' && currentBoard[7] === 'o')) {
-    ui.winMessage(currentBoard[1])
-    currentBoard = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
+    winOrDraw = 'win'
   } else if ((currentBoard[2] === 'x' && currentBoard[5] === 'x' && currentBoard[8] === 'x') ||
   (currentBoard[2] === 'o' && currentBoard[5] === 'o' && currentBoard[8] === 'o')) {
-    ui.winMessage(currentBoard[2])
-    currentBoard = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
+    winOrDraw = 'win'
   } else if ((currentBoard[0] === 'x' && currentBoard[4] === 'x' && currentBoard[8] === 'x') ||
   (currentBoard[0] === 'o' && currentBoard[4] === 'o' && currentBoard[8] === 'o')) {
-    ui.winMessage(currentBoard[0])
-    currentBoard = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
+    winOrDraw = 'win'
   } else if ((currentBoard[2] === 'x' && currentBoard[4] === 'x' && currentBoard[6] === 'x') ||
   (currentBoard[2] === 'o' && currentBoard[4] === 'o' && currentBoard[6] === 'o')) {
-    ui.winMessage(currentBoard[2])
-    currentBoard = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
+    winOrDraw = 'win'
   } else if (currentBoard.every(isBoardFull)) {
-    $('#message-box').html(`<p>It's a draw!</p>`)
+    winOrDraw = 'draw'
   } else {
-    switchPlayers()
+    // switchPlayers()
   }
 }
 
 module.exports = {
-  addCurrentPlayer,
-  switchPlayers,
-  resetBoard,
-  checkWin,
   createGameSuccess,
   createGameFail,
   shareCurrentPlayer,
-  shareWinStatus,
+  canContinue,
+  canAddPlayer,
+  updateCurrentBoard,
   updateGameFail,
   updateGameSuccessTL,
   updateGameSuccessTM,
