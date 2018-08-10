@@ -14,6 +14,7 @@ $(() => {
   $('#tic-tac-toe').hide()
   $('#sign-up-container').hide()
   $('#change-password-container').hide()
+  $('#start-new-game').hide()
   gameEvents.addHandlers()
   authEvents.addHandlers()
 })

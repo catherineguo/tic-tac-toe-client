@@ -1,7 +1,6 @@
 'use strict'
 
 const store = require('../store.js')
-const gameEngine = require('../game/game-logic.js')
 
 const signOutClear = () => {
   $('#sign-up input').val('')
@@ -29,10 +28,12 @@ const signInSuccess = (response) => {
   $('#user-auth-message').html('').removeClass('alert alert-success').removeClass('alert alert-danger')
   store.user = response.user
   console.log(`this is store`, store)
-  gameEngine.resetBoard()
-  $('#tic-tac-toe').show()
   $('#sign-in-container').hide()
+  $('#start-new-game').show()
 }
+
+// gameEngine.resetBoard()
+// $('#tic-tac-toe').show()
 
 const signInFail = () => {
   $('#user-auth-message').html('<p>Oops, try again.</p>').addClass('alert alert-danger')

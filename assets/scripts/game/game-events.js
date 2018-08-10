@@ -5,45 +5,80 @@ const gameApi = require('./game-api.js')
 
 const newGame = () => {
   gameApi.createGame()
-    .then(gameEngine.logGame)
-    .catch()
-  gameEngine.resetBoard()
+    .then(gameEngine.createGameSuccess)
+    .catch(gameEngine.createGameFail)
 }
 
 const addTopLeft = () => {
-  gameEngine.addCurrentPlayer(0)
+  const value = gameEngine.shareCurrentPlayer()
+  const isGameOver = gameEngine.shareWinStatus()
+  gameApi.updateGame(0, value, isGameOver)
+    .then(gameEngine.updateGameSuccessTL)
+    .catch(gameEngine.updateGameFail)
 }
 
 const addTopMiddle = () => {
-  gameEngine.addCurrentPlayer(1)
+  const value = gameEngine.shareCurrentPlayer()
+  const isGameOver = gameEngine.shareWinStatus()
+  gameApi.updateGame(1, value, isGameOver)
+    .then(gameEngine.updateGameSuccessTM)
+    .catch(gameEngine.updateGameFail)
 }
 
 const addTopRight = () => {
-  gameEngine.addCurrentPlayer(2)
+  const value = gameEngine.shareCurrentPlayer()
+  const isGameOver = gameEngine.shareWinStatus()
+  gameApi.updateGame(2, value, isGameOver)
+    .then(gameEngine.updateGameSuccessTR)
+    .catch(gameEngine.updateGameFail)
 }
 
 const addMiddleLeft = () => {
-  gameEngine.addCurrentPlayer(3)
+  const value = gameEngine.shareCurrentPlayer()
+  const isGameOver = gameEngine.shareWinStatus()
+  gameApi.updateGame(3, value, isGameOver)
+    .then(gameEngine.updateGameSuccessML)
+    .catch(gameEngine.updateGameFail)
 }
 
 const addMiddleMiddle = () => {
-  gameEngine.addCurrentPlayer(4)
+  const value = gameEngine.shareCurrentPlayer()
+  const isGameOver = gameEngine.shareWinStatus()
+  gameApi.updateGame(4, value, isGameOver)
+    .then(gameEngine.updateGameSuccessMM)
+    .catch(gameEngine.updateGameFail)
 }
 
 const addMiddleRight = () => {
-  gameEngine.addCurrentPlayer(5)
+  const value = gameEngine.shareCurrentPlayer()
+  const isGameOver = gameEngine.shareWinStatus()
+  gameApi.updateGame(5, value, isGameOver)
+    .then(gameEngine.updateGameSuccessMR)
+    .catch(gameEngine.updateGameFail)
 }
 
 const addBottomLeft = () => {
-  gameEngine.addCurrentPlayer(6)
+  const value = gameEngine.shareCurrentPlayer()
+  const isGameOver = gameEngine.shareWinStatus()
+  gameApi.updateGame(6, value, isGameOver)
+    .then(gameEngine.updateGameSuccessBL)
+    .catch(gameEngine.updateGameFail)
 }
 
 const addBottomMiddle = () => {
-  gameEngine.addCurrentPlayer(7)
+  const value = gameEngine.shareCurrentPlayer()
+  const isGameOver = gameEngine.shareWinStatus()
+  gameApi.updateGame(7, value, isGameOver)
+    .then(gameEngine.updateGameSuccessBM)
+    .catch(gameEngine.updateGameFail)
 }
 
 const addBottomRight = () => {
-  gameEngine.addCurrentPlayer(8)
+  const value = gameEngine.shareCurrentPlayer()
+  const isGameOver = gameEngine.shareWinStatus()
+  gameApi.updateGame(8, value, isGameOver)
+    .then(gameEngine.updateGameSuccessBR)
+    .catch(gameEngine.updateGameFail)
 }
 
 const addHandlers = () => {
@@ -57,6 +92,7 @@ const addHandlers = () => {
   $('#bottomMiddle').on('click', addBottomMiddle)
   $('#bottomRight').on('click', addBottomRight)
   $('#new-game-button').on('click', newGame)
+  $('#start-new-game').on('click', newGame)
 }
 
 module.exports = {
