@@ -1,8 +1,12 @@
 'use strict'
 
 const gameEngine = require('./game-logic.js')
+const gameApi = require('./game-api.js')
 
 const newGame = () => {
+  gameApi.createGame()
+    .then(gameEngine.logGame)
+    .catch()
   gameEngine.resetBoard()
 }
 

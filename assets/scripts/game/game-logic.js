@@ -6,9 +6,15 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 const ui = require('./game-ui.js')
+const store = require('../store.js')
 
 let currentBoard = ['', '', '', '', '', '', '', '', '']
 let currentPlayer = 'x'
+
+const logGame = (response) => {
+  store.game = response.game
+  console.log(`this is store`, store)
+}
 
 const addCurrentPlayer = (indexNum) => {
   if (currentBoard.every(isBoardFull)) {
@@ -89,5 +95,6 @@ module.exports = {
   addCurrentPlayer,
   switchPlayers,
   resetBoard,
-  checkWin
+  checkWin,
+  logGame
 }

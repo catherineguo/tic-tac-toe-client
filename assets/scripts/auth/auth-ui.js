@@ -28,6 +28,7 @@ const signInSuccess = (response) => {
   $('#sign-in input').val('')
   $('#user-auth-message').html('').removeClass('alert alert-success').removeClass('alert alert-danger')
   store.user = response.user
+  console.log(`this is store`, store)
   gameEngine.resetBoard()
   $('#tic-tac-toe').show()
   $('#sign-in-container').hide()
