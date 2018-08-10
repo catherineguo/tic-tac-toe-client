@@ -2,6 +2,10 @@
 
 const gameEngine = require('./game-logic.js')
 
+const newGame = () => {
+  gameEngine.resetBoard()
+}
+
 const addTopLeft = () => {
   gameEngine.addCurrentPlayer(0)
 }
@@ -36,10 +40,6 @@ const addBottomMiddle = () => {
 
 const addBottomRight = () => {
   gameEngine.addCurrentPlayer(8)
-}
-
-const newGame = () => {
-  gameEngine.resetBoard()
 }
 
 const addHandlers = () => {
