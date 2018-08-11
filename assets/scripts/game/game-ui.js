@@ -12,30 +12,30 @@ const addCurrentPlayer = (indexNum, currentPlayer, winOrDraw) => {
 }
 
 const addMark = (indexNum, currentPlayer) => {
-  let color = ''
+  let emoji = ''
   if (currentPlayer === 'x') {
-    color = '#fa7c92'
+    emoji = '🍟'
   } else {
-    color = '#66ab8c'
+    emoji = '🍩'
   }
   if (indexNum === 0) {
-    $('#topLeft').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
+    $('#topLeft').html(`<p>${emoji}</p>`)
   } else if (indexNum === 1) {
-    $('#topMiddle').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
+    $('#topMiddle').html(`<p>${emoji}</p>`)
   } else if (indexNum === 2) {
-    $('#topRight').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
+    $('#topRight').html(`<p>${emoji}</p>`)
   } else if (indexNum === 3) {
-    $('#middleLeft').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
+    $('#middleLeft').html(`<p>${emoji}</p>`)
   } else if (indexNum === 4) {
-    $('#middleMiddle').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
+    $('#middleMiddle').html(`<p>${emoji}</p>`)
   } else if (indexNum === 5) {
-    $('#middleRight').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
+    $('#middleRight').html(`<p>${emoji}</p>`)
   } else if (indexNum === 6) {
-    $('#bottomLeft').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
+    $('#bottomLeft').html(`<p>${emoji}</p>`)
   } else if (indexNum === 7) {
-    $('#bottomMiddle').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
+    $('#bottomMiddle').html(`<p>${emoji}</p>`)
   } else if (indexNum === 8) {
-    $('#bottomRight').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
+    $('#bottomRight').html(`<p>${emoji}</p>`)
   }
 }
 
@@ -69,6 +69,10 @@ const onGetGamesSuccess = (response) => {
   response.games.forEach((game) => {
     numOfGames++
   })
+  if (numOfGames === 0) {
+  } else {
+    numOfGames--
+  }
   $('#game-stats-text').html(`Total Games Played:<p>${numOfGames}</p>`)
   $('#game-stats-container').toggle()
   $('html, body').animate({

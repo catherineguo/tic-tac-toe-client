@@ -8,6 +8,8 @@ const signOutClear = () => {
   $('#change-password input').val('')
   $('#user-auth-message').html('')
   $('#change-password-container').hide()
+  $('#game-stats-text').html('')
+  $('#game-stats-container').hide()
 }
 
 const signUpSuccess = () => {

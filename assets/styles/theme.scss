@@ -73,11 +73,17 @@ body {
     padding: 10px 50px 30px;
   }
 
+  .well {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
   .game-container {
     margin: $element-margin;
 
     p {
       font-size: $board-font-size;
+      line-height: 130px;
       margin: 0;
       text-align: center;
     }
