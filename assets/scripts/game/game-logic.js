@@ -21,11 +21,7 @@ const createGameSuccess = (response) => {
 }
 
 const createGameFail = () => {
-  $('#user-auth-message').html('<p>Sorry, making a new game failed.</p>').addClass('alert alert-danger')
-}
-
-const shareCurrentPlayer = () => {
-  return currentPlayer
+  $('#user-auth-message').html('<p>Sorry, starting a new game failed.</p>').addClass('alert alert-danger')
 }
 
 const canContinue = () => {
@@ -34,6 +30,10 @@ const canContinue = () => {
   } else {
     return true
   }
+}
+
+const shareCurrentPlayer = () => {
+  return currentPlayer
 }
 
 const canAddPlayer = (indexNum) => {
@@ -55,83 +55,56 @@ const updateGameFail = () => {
 
 const updateGameSuccessTL = (response) => {
   store.game = response.game
-  console.log(`this is the store`, store)
-  switchPlayers()
-  console.log(`this is the current player`, currentPlayer)
-  console.log(`this is the current board`, currentBoard)
   ui.addCurrentPlayer(0, currentPlayer, winOrDraw)
+  switchPlayers()
 }
 
 const updateGameSuccessTM = (response) => {
   store.game = response.game
-  console.log(`this is the store`, store)
-  switchPlayers()
-  console.log(`this is the current player`, currentPlayer)
-  console.log(`this is the current board`, currentBoard)
   ui.addCurrentPlayer(1, currentPlayer, winOrDraw)
+  switchPlayers()
 }
 
 const updateGameSuccessTR = (response) => {
   store.game = response.game
-  console.log(`this is the store`, store)
-  switchPlayers()
-  console.log(`this is the current player`, currentPlayer)
-  console.log(`this is the current board`, currentBoard)
   ui.addCurrentPlayer(2, currentPlayer, winOrDraw)
+  switchPlayers()
 }
 
 const updateGameSuccessML = (response) => {
   store.game = response.game
-  console.log(`this is the store`, store)
-  switchPlayers()
-  console.log(`this is the current player`, currentPlayer)
-  console.log(`this is the current board`, currentBoard)
   ui.addCurrentPlayer(3, currentPlayer, winOrDraw)
+  switchPlayers()
 }
 
 const updateGameSuccessMM = (response) => {
   store.game = response.game
-  console.log(`this is the store`, store)
-  switchPlayers()
-  console.log(`this is the current player`, currentPlayer)
-  console.log(`this is the current board`, currentBoard)
   ui.addCurrentPlayer(4, currentPlayer, winOrDraw)
+  switchPlayers()
 }
 
 const updateGameSuccessMR = (response) => {
   store.game = response.game
-  console.log(`this is the store`, store)
-  switchPlayers()
-  console.log(`this is the current player`, currentPlayer)
-  console.log(`this is the current board`, currentBoard)
   ui.addCurrentPlayer(5, currentPlayer, winOrDraw)
+  switchPlayers()
 }
 
 const updateGameSuccessBL = (response) => {
   store.game = response.game
-  console.log(`this is the store`, store)
-  switchPlayers()
-  console.log(`this is the current player`, currentPlayer)
-  console.log(`this is the current board`, currentBoard)
   ui.addCurrentPlayer(6, currentPlayer, winOrDraw)
+  switchPlayers()
 }
 
 const updateGameSuccessBM = (response) => {
   store.game = response.game
-  console.log(`this is the store`, store)
-  switchPlayers()
-  console.log(`this is the current player`, currentPlayer)
-  console.log(`this is the current board`, currentBoard)
   ui.addCurrentPlayer(7, currentPlayer, winOrDraw)
+  switchPlayers()
 }
 
 const updateGameSuccessBR = (response) => {
   store.game = response.game
-  console.log(`this is the store`, store)
-  switchPlayers()
-  console.log(`this is the current player`, currentPlayer)
-  console.log(`this is the current board`, currentBoard)
   ui.addCurrentPlayer(8, currentPlayer, winOrDraw)
+  switchPlayers()
 }
 
 const switchPlayers = () => {
@@ -184,8 +157,6 @@ const checkWin = () => {
     winOrDraw = 'win'
   } else if (currentBoard.every(isBoardFull)) {
     winOrDraw = 'draw'
-  } else {
-    // switchPlayers()
   }
 }
 

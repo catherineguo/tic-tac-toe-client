@@ -11,7 +11,7 @@ const signOutClear = () => {
 }
 
 const signUpSuccess = (response) => {
-  $('#user-auth-message').html("<p>You've signed up! Now sign in.</p>").addClass('alert alert-success')
+  $('#user-auth-message').html("<p>You've signed up! Now sign in.</p>").removeClass('alert alert-danger').addClass('alert alert-success')
   $('#sign-up input').val('')
   $('#sign-in input').val('')
   $('#sign-up-container').hide()
