@@ -12,24 +12,30 @@ const addCurrentPlayer = (indexNum, currentPlayer, winOrDraw) => {
 }
 
 const addMark = (indexNum, currentPlayer) => {
+  let color = ''
+  if (currentPlayer === 'x') {
+    color = '#fa7c92'
+  } else {
+    color = '#66ab8c'
+  }
   if (indexNum === 0) {
-    $('#topLeft').html(`<p>${currentPlayer}</p>`)
+    $('#topLeft').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
   } else if (indexNum === 1) {
-    $('#topMiddle').html(`<p>${currentPlayer}</p>`)
+    $('#topMiddle').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
   } else if (indexNum === 2) {
-    $('#topRight').html(`<p>${currentPlayer}</p>`)
+    $('#topRight').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
   } else if (indexNum === 3) {
-    $('#middleLeft').html(`<p>${currentPlayer}</p>`)
+    $('#middleLeft').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
   } else if (indexNum === 4) {
-    $('#middleMiddle').html(`<p>${currentPlayer}</p>`)
+    $('#middleMiddle').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
   } else if (indexNum === 5) {
-    $('#middleRight').html(`<p>${currentPlayer}</p>`)
+    $('#middleRight').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
   } else if (indexNum === 6) {
-    $('#bottomLeft').html(`<p>${currentPlayer}</p>`)
+    $('#bottomLeft').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
   } else if (indexNum === 7) {
-    $('#bottomMiddle').html(`<p>${currentPlayer}</p>`)
+    $('#bottomMiddle').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
   } else if (indexNum === 8) {
-    $('#bottomRight').html(`<p>${currentPlayer}</p>`)
+    $('#bottomRight').html(`<p>${currentPlayer}</p>`).css('color', `${color}`)
   }
 }
 
