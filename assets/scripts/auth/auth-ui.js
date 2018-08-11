@@ -10,7 +10,7 @@ const signOutClear = () => {
   $('#change-password-container').hide()
 }
 
-const signUpSuccess = (response) => {
+const signUpSuccess = () => {
   $('#user-auth-message').html("<p>You've signed up! Now sign in.</p>").removeClass('alert alert-danger').addClass('alert alert-success')
   $('#sign-up input').val('')
   $('#sign-in input').val('')
@@ -31,9 +31,6 @@ const signInSuccess = (response) => {
   $('#sign-in-container').hide()
   $('#start-new-game').show()
 }
-
-// gameEngine.resetBoard()
-// $('#tic-tac-toe').show()
 
 const signInFail = () => {
   $('#user-auth-message').html('<p>Oops, try again.</p>').addClass('alert alert-danger')

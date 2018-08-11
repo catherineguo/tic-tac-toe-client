@@ -11,8 +11,7 @@ const newGame = () => {
 }
 
 const addTopLeft = () => {
-  const canContinue = gameEngine.canContinue()
-  if (!canContinue) {
+  if (!gameEngine.canContinue()) {
   } else if (!gameEngine.canAddPlayer(0)) {
     ui.invalidMoveMessage()
   } else {
@@ -26,8 +25,7 @@ const addTopLeft = () => {
 }
 
 const addTopMiddle = () => {
-  const canContinue = gameEngine.canContinue()
-  if (!canContinue) {
+  if (!gameEngine.canContinue()) {
   } else if (!gameEngine.canAddPlayer(1)) {
     ui.invalidMoveMessage()
   } else {
@@ -41,8 +39,7 @@ const addTopMiddle = () => {
 }
 
 const addTopRight = () => {
-  const canContinue = gameEngine.canContinue()
-  if (!canContinue) {
+  if (!gameEngine.canContinue()) {
   } else if (!gameEngine.canAddPlayer(2)) {
     ui.invalidMoveMessage()
   } else {
@@ -56,8 +53,7 @@ const addTopRight = () => {
 }
 
 const addMiddleLeft = () => {
-  const canContinue = gameEngine.canContinue()
-  if (!canContinue) {
+  if (!gameEngine.canContinue()) {
   } else if (!gameEngine.canAddPlayer(3)) {
     ui.invalidMoveMessage()
   } else {
@@ -71,8 +67,7 @@ const addMiddleLeft = () => {
 }
 
 const addMiddleMiddle = () => {
-  const canContinue = gameEngine.canContinue()
-  if (!canContinue) {
+  if (!gameEngine.canContinue()) {
   } else if (!gameEngine.canAddPlayer(4)) {
     ui.invalidMoveMessage()
   } else {
@@ -86,8 +81,7 @@ const addMiddleMiddle = () => {
 }
 
 const addMiddleRight = () => {
-  const canContinue = gameEngine.canContinue()
-  if (!canContinue) {
+  if (!gameEngine.canContinue()) {
   } else if (!gameEngine.canAddPlayer(5)) {
     ui.invalidMoveMessage()
   } else {
@@ -101,8 +95,7 @@ const addMiddleRight = () => {
 }
 
 const addBottomLeft = () => {
-  const canContinue = gameEngine.canContinue()
-  if (!canContinue) {
+  if (!gameEngine.canContinue()) {
   } else if (!gameEngine.canAddPlayer(6)) {
     ui.invalidMoveMessage()
   } else {
@@ -116,8 +109,7 @@ const addBottomLeft = () => {
 }
 
 const addBottomMiddle = () => {
-  const canContinue = gameEngine.canContinue()
-  if (!canContinue) {
+  if (!gameEngine.canContinue()) {
   } else if (!gameEngine.canAddPlayer(7)) {
     ui.invalidMoveMessage()
   } else {
@@ -131,8 +123,7 @@ const addBottomMiddle = () => {
 }
 
 const addBottomRight = () => {
-  const canContinue = gameEngine.canContinue()
-  if (!canContinue) {
+  if (!gameEngine.canContinue()) {
   } else if (!gameEngine.canAddPlayer(8)) {
     ui.invalidMoveMessage()
   } else {

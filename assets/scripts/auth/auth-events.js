@@ -13,7 +13,7 @@ const showSignUp = (event) => {
 const showSignIn = (event) => {
   $('#sign-in-container').show()
   $('#sign-up-container').hide()
-  $('#user-auth-message').html('')
+  $('#user-auth-message').html('').removeClass('alert alert-danger')
 }
 
 const onSignUp = (event) => {

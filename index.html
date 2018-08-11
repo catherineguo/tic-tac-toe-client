@@ -57,7 +57,7 @@
           <p>Failed to change password.</p>
         </section>
 
-        <button type="button" class="btn btn-info" id="new-game-button">new game</button>
+        <button type="button" class="btn btn-info" id="new-game-button">New Game</button>
         <section id="message-box">
           <p>Player 1's turn</p>
         </section>
@@ -78,15 +78,18 @@
               <div class= "game-box" id="bottomRight"></div>
             </div>
           </div>
-          <button type="button" class="btn btn-info" id="sign-out">sign out</button>
-          <button type="button" class="btn btn-info" id="change-password-link">change password</button>
+          <div class="bottom-buttons">
+            <button type="button" class="btn btn-info" id="sign-out">sign out</button>
+            <button type="button" class="btn btn-info" id="change-password-link">change password</button>
+            <button type="button" class="btn btn-info" id="game-stats">game stats</button>
+          </div>
       </section>
 
       <section id="change-password-container">
         <h1>change password</h1>
         <form id='change-password'>
           <fieldset>
-            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <input type="password" name="passwords[old]" placeholder="Current Password">
             <input type="password" name="passwords[new]" placeholder="New Password">
             <button type="submit" class="btn btn-info">change password</button>
           </fieldset>

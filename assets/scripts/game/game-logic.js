@@ -14,7 +14,6 @@ let winOrDraw = ''
 
 const createGameSuccess = (response) => {
   store.game = response.game
-  console.log(`this is store`, store)
   resetBoard()
   $('#start-new-game').hide()
   $('#tic-tac-toe').show()
