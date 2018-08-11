@@ -136,6 +136,12 @@ const addBottomRight = () => {
   }
 }
 
+const toggleGameStats = (event) => {
+  gameApi.getGames()
+    .then(ui.onGetGamesSuccess)
+    .catch(ui.onGetGamesFail)
+}
+
 const addHandlers = () => {
   $('#topLeft').on('click', addTopLeft)
   $('#topMiddle').on('click', addTopMiddle)
@@ -148,6 +154,7 @@ const addHandlers = () => {
   $('#bottomRight').on('click', addBottomRight)
   $('#new-game-button').on('click', newGame)
   $('#start-new-game').on('click', newGame)
+  $('#game-stats').on('click', toggleGameStats)
 }
 
 module.exports = {

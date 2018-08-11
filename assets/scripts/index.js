@@ -15,6 +15,7 @@ $(() => {
   $('#sign-up-container').hide()
   $('#change-password-container').hide()
   $('#start-new-game').hide()
+  $('#game-stats-container').hide()
   gameEvents.addHandlers()
   authEvents.addHandlers()
 })

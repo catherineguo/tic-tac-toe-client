@@ -64,11 +64,33 @@ const invalidMoveMessage = () => {
   $('#message-box p').text(`That spot is taken!`)
 }
 
+const onGetGamesSuccess = (response) => {
+  let numOfGames = 0
+  response.games.forEach((game) => {
+    numOfGames++
+  })
+  $('#game-stats-text').html(`Total Games Played:<p>${numOfGames}</p>`)
+  $('#game-stats-container').toggle()
+  $('html, body').animate({
+    scrollTop: $('#game-stats-container').offset().top
+  }, 1000)
+}
+
+const onGetGamesFail = (response) => {
+  $('#game-stats-container').html(`Sorry, something went wrong.`)
+  $('#game-stats-container').toggle()
+  $('html, body').animate({
+    scrollTop: $('#game-stats-container').offset().top
+  }, 1000)
+}
+
 module.exports = {
   addCurrentPlayer,
   addMark,
   clearBoard,
   turnMessage,
   winMessage,
-  invalidMoveMessage
+  invalidMoveMessage,
+  onGetGamesSuccess,
+  onGetGamesFail
 }
