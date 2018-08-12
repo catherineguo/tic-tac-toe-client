@@ -110,11 +110,10 @@ body {
     width: 130px;
   }
 
-  .pink-color {
-    color: $link-hover-color;
-  }
-
-  .green-color {
-    color: $link-color;
+  .modal-content {
+    h1,
+    p {
+      text-align: center;
+    }
   }
 }

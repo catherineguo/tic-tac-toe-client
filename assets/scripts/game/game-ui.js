@@ -41,22 +41,22 @@ const addMark = (indexNum, currentPlayer) => {
 
 const clearBoard = () => {
   $('#game-container div div').html('')
-  $('#message-box').html(`<p>Player 1's turn</p>`)
+  $('#message-box').html(`<p>🍟's turn</p>`)
 }
 
 const turnMessage = (currentPlayer) => {
   if (currentPlayer === 'o') {
-    $('#message-box').html(`<p>Player 1's turn</p>`)
+    $('#message-box').html(`<p>🍟's turn</p>`)
   } else {
-    $('#message-box').html(`<p>Player 2's turn</p>`)
+    $('#message-box').html(`<p>🍩's turn</p>`)
   }
 }
 
 const winMessage = (winner) => {
   if (winner === 'x') {
-    $('#message-box').html(`<p>Player 1 wins!</p>`)
+    $('#message-box').html(`<p>🍟 wins!</p>`)
   } else {
-    $('#message-box').html(`<p>Player 2 wins!</p>`)
+    $('#message-box').html(`<p>🍩 wins!</p>`)
   }
 }
 
@@ -73,19 +73,11 @@ const onGetGamesSuccess = (response) => {
   } else {
     numOfGames--
   }
-  $('#game-stats-text').html(`Total Games Played:<p>${numOfGames}</p>`)
-  $('#game-stats-container').toggle()
-  $('html, body').animate({
-    scrollTop: $('#game-stats-container').offset().top
-  }, 1000)
+  $('#game-stats-text').html(`Total Games Played: ${numOfGames}`)
 }
 
 const onGetGamesFail = (response) => {
-  $('#game-stats-container').html(`Sorry, something went wrong.`)
-  $('#game-stats-container').toggle()
-  $('html, body').animate({
-    scrollTop: $('#game-stats-container').offset().top
-  }, 1000)
+  $('#game-stats-text').html(`Sorry, something went wrong.`)
 }
 
 module.exports = {

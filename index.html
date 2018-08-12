@@ -82,7 +82,7 @@
           <div class="bottom-buttons">
             <button type="button" class="btn btn-info" id="sign-out">sign out</button>
             <button type="button" class="btn btn-info" id="change-password-link">change password</button>
-            <button type="button" class="btn btn-info" id="game-stats">game stats</button>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-sm" id="game-stats">game stats</button>
           </div>
       </section>
 
@@ -97,10 +97,14 @@
         </form>
       </section>
 
-      <section class="well section-container" id="game-stats-container">
-        <h1>Game Stats</h1>
-        <p id="game-stats-text"></p>
-      </section>
+      <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <h1>Game Stats</h1>
+            <p id="game-stats-text"></p>
+          </div>
+        </div>
+      </div>
 
     </body>
 </html>
