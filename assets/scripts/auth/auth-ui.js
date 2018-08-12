@@ -13,7 +13,8 @@ const signOutClear = () => {
 }
 
 const signUpSuccess = () => {
-  $('#user-auth-message').html("<p>You've signed up! Now sign in.</p>").removeClass('alert alert-danger').addClass('alert alert-success')
+  $('#user-auth-message').html('').removeClass('alert alert-success').removeClass('alert alert-danger')
+  $('#user-auth-message').html("<p>You've signed up! Now sign in.</p>").addClass('alert alert-success')
   $('#sign-up input').val('')
   $('#sign-in input').val('')
   $('#sign-up-container').hide()
@@ -22,19 +23,20 @@ const signUpSuccess = () => {
 }
 
 const signUpFail = () => {
-  $('#user-auth-message').html('<p>Sorry, try again. Check that your passwords match.</p>').addClass('alert alert-danger')
+  $('#user-auth-message').html('').removeClass('alert alert-success').removeClass('alert alert-danger')
+  $('#user-auth-message').html('<p>Sorry, try again.</p>').addClass('alert alert-danger')
 }
 
 const signInSuccess = (response) => {
   $('#sign-in input').val('')
   $('#user-auth-message').html('').removeClass('alert alert-success').removeClass('alert alert-danger')
   store.user = response.user
-  console.log(`this is store`, store)
   $('#sign-in-container').hide()
   $('#start-new-game').show()
 }
 
 const signInFail = () => {
+  $('#user-auth-message').html('').removeClass('alert alert-success').removeClass('alert alert-danger')
   $('#user-auth-message').html('<p>Oops, try again.</p>').addClass('alert alert-danger')
 }
 
@@ -58,6 +60,7 @@ const signOutSuccess = () => {
 }
 
 const signOutFail = () => {
+  $('#user-auth-message').html('').removeClass('alert alert-success').removeClass('alert alert-danger')
   $('#user-auth-message').html('<p>Sign out failed.</p>')
 }
 

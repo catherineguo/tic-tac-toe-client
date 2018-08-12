@@ -19,7 +19,7 @@ body {
   }
 
   .btn {
-    font-size: 18px;
+    font-size: $body-font-size;
   }
 
   h1 {
@@ -73,6 +73,12 @@ body {
     padding: 10px 50px 30px;
   }
 
+  .alert-container {
+    p {
+      margin: 5px;
+    }
+  }
+
   .well {
     margin-bottom: 20px;
     margin-top: 20px;
@@ -92,6 +98,7 @@ body {
   .board-top-row,
   .board-middle-row,
   .board-bottom-row {
+    cursor: pointer;
     display: flex;
   }
 

@@ -4,7 +4,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import 'typography';
 @import 'theme';
 
-// code I found on https://techstacker.com/posts/np6yd7A5FzLtpuwku/css-how-to-remove-the-yellow-background-color-on-input lol
+// code I found on https://techstacker.com/posts/np6yd7A5FzLtpuwku/css-how-to-remove-the-yellow-background-color-on-input
 input:-webkit-autofill {
     -webkit-box-shadow: inset 0 0 0px 9999px white;
 }

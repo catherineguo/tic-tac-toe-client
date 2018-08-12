@@ -7,7 +7,7 @@ const authUi = require('./auth-ui.js')
 const showSignUp = (event) => {
   $('#sign-up-container').show()
   $('#sign-in-container').hide()
-  $('#user-auth-message').html('')
+  $('#user-auth-message').html('').removeClass('alert alert-danger')
 }
 
 const showSignIn = (event) => {
