@@ -52,57 +52,9 @@ const updateGameFail = () => {
   $('#user-auth-message').html('<p>Sorry, something went wrong.</p>').addClass('alert alert-danger')
 }
 
-const updateGameSuccessTL = (response) => {
+const updateSuccess = (indexNum, response) => {
   store.game = response.game
-  ui.addCurrentPlayer(0, currentPlayer, winOrDraw)
-  switchPlayers()
-}
-
-const updateGameSuccessTM = (response) => {
-  store.game = response.game
-  ui.addCurrentPlayer(1, currentPlayer, winOrDraw)
-  switchPlayers()
-}
-
-const updateGameSuccessTR = (response) => {
-  store.game = response.game
-  ui.addCurrentPlayer(2, currentPlayer, winOrDraw)
-  switchPlayers()
-}
-
-const updateGameSuccessML = (response) => {
-  store.game = response.game
-  ui.addCurrentPlayer(3, currentPlayer, winOrDraw)
-  switchPlayers()
-}
-
-const updateGameSuccessMM = (response) => {
-  store.game = response.game
-  ui.addCurrentPlayer(4, currentPlayer, winOrDraw)
-  switchPlayers()
-}
-
-const updateGameSuccessMR = (response) => {
-  store.game = response.game
-  ui.addCurrentPlayer(5, currentPlayer, winOrDraw)
-  switchPlayers()
-}
-
-const updateGameSuccessBL = (response) => {
-  store.game = response.game
-  ui.addCurrentPlayer(6, currentPlayer, winOrDraw)
-  switchPlayers()
-}
-
-const updateGameSuccessBM = (response) => {
-  store.game = response.game
-  ui.addCurrentPlayer(7, currentPlayer, winOrDraw)
-  switchPlayers()
-}
-
-const updateGameSuccessBR = (response) => {
-  store.game = response.game
-  ui.addCurrentPlayer(8, currentPlayer, winOrDraw)
+  ui.addCurrentPlayer(indexNum, currentPlayer, winOrDraw)
   switchPlayers()
 }
 
@@ -167,13 +119,5 @@ module.exports = {
   canAddPlayer,
   updateCurrentBoard,
   updateGameFail,
-  updateGameSuccessTL,
-  updateGameSuccessTM,
-  updateGameSuccessTR,
-  updateGameSuccessML,
-  updateGameSuccessMM,
-  updateGameSuccessMR,
-  updateGameSuccessBL,
-  updateGameSuccessBM,
-  updateGameSuccessBR
+  updateSuccess
 }

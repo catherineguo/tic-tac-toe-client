@@ -18,25 +18,7 @@ const addMark = (indexNum, currentPlayer) => {
   } else {
     emoji = '🍩'
   }
-  if (indexNum === 0) {
-    $('#topLeft').html(`<p>${emoji}</p>`)
-  } else if (indexNum === 1) {
-    $('#topMiddle').html(`<p>${emoji}</p>`)
-  } else if (indexNum === 2) {
-    $('#topRight').html(`<p>${emoji}</p>`)
-  } else if (indexNum === 3) {
-    $('#middleLeft').html(`<p>${emoji}</p>`)
-  } else if (indexNum === 4) {
-    $('#middleMiddle').html(`<p>${emoji}</p>`)
-  } else if (indexNum === 5) {
-    $('#middleRight').html(`<p>${emoji}</p>`)
-  } else if (indexNum === 6) {
-    $('#bottomLeft').html(`<p>${emoji}</p>`)
-  } else if (indexNum === 7) {
-    $('#bottomMiddle').html(`<p>${emoji}</p>`)
-  } else if (indexNum === 8) {
-    $('#bottomRight').html(`<p>${emoji}</p>`)
-  }
+  $('#square' + indexNum.toString()).html(`<p>${emoji}</p>`)
 }
 
 const clearBoard = () => {
