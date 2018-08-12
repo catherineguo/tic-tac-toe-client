@@ -62,6 +62,10 @@ const onGetGamesSuccess = (response) => {
   } else {
     numOfGames--
   }
+  if (incompleteGames === 0) {
+  } else {
+    incompleteGames--
+  }
   $('#game-stats-text').html(`Total Games Played: ${numOfGames}<p>Completed Games: ${completeGames}</p><p>Incomplete Games: ${incompleteGames}</p>`)
 }
 
