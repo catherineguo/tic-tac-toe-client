@@ -66,14 +66,21 @@ const invalidMoveMessage = () => {
 
 const onGetGamesSuccess = (response) => {
   let numOfGames = 0
+  let completeGames = 0
+  let incompleteGames = 0
   response.games.forEach((game) => {
     numOfGames++
+    if (game.over) {
+      completeGames++
+    } else {
+      incompleteGames++
+    }
   })
   if (numOfGames === 0) {
   } else {
     numOfGames--
   }
-  $('#game-stats-text').html(`Total Games Played: ${numOfGames}`)
+  $('#game-stats-text').html(`Total Games Played: ${numOfGames}<p>Completed Games: ${completeGames}</p><p>Incomplete Games: ${incompleteGames}</p>`)
 }
 
 const onGetGamesFail = (response) => {
