@@ -4,6 +4,16 @@ const gameEngine = require('./game-logic.js')
 const gameApi = require('./game-api.js')
 const ui = require('./game-ui.js')
 
+const gameInit = () => {
+  $('#password-change-success').hide()
+  $('#password-change-fail').hide()
+  $('#tic-tac-toe').hide()
+  $('#sign-up-container').hide()
+  $('#change-password-container').hide()
+  $('#start-new-game').hide()
+  $('#game-stats-container').hide()
+}
+
 const newGame = () => {
   gameApi.createGame()
     .then(gameEngine.createGameSuccess)
@@ -42,5 +52,6 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  gameInit
 }

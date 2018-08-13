@@ -48,14 +48,14 @@ const updateCurrentBoard = (indexNum) => {
   checkWin()
 }
 
-const updateGameFail = () => {
-  $('#user-auth-message').html('<p>Sorry, something went wrong.</p>').addClass('alert alert-danger')
-}
-
 const updateSuccess = (indexNum, response) => {
   store.game = response.game
   ui.addCurrentPlayer(indexNum, currentPlayer, winOrDraw)
   switchPlayers()
+}
+
+const updateGameFail = () => {
+  $('#user-auth-message').html('<p>Sorry, something went wrong.</p>').addClass('alert alert-danger')
 }
 
 const switchPlayers = () => {
