@@ -7,7 +7,7 @@ const addCurrentPlayer = (indexNum, currentPlayer, winOrDraw) => {
   } else if (winOrDraw === 'win') {
     winMessage(currentPlayer)
   } else {
-    $('#message-box').html(`<p>It's a draw!</p>`).addClass('draw-background')
+    $('#message-box').html(`<p>It's a draw!</p>`).addClass('draw-background').removeClass('warning-background')
   }
 }
 
