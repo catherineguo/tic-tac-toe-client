@@ -23,7 +23,7 @@ const addMark = (indexNum, currentPlayer) => {
 
 const clearBoard = () => {
   $('#game-container div div').html('')
-  $('#message-box').html(`<p>🍟's turn</p>`).removeClass('win-background').removeClass('draw-background')
+  $('#message-box').html(`<p>🍟's turn</p>`).removeClass('win-background').removeClass('draw-background').removeClass('warning-background')
 }
 
 const turnMessage = (currentPlayer) => {
@@ -36,9 +36,9 @@ const turnMessage = (currentPlayer) => {
 
 const winMessage = (winner) => {
   if (winner === 'x') {
-    $('#message-box').html(`<p>🍟 wins!</p>`).addClass('win-background')
+    $('#message-box').html(`<p>🍟 wins!</p>`).addClass('win-background').removeClass('warning-background')
   } else {
-    $('#message-box').html(`<p>🍩 wins!</p>`).addClass('win-background')
+    $('#message-box').html(`<p>🍩 wins!</p>`).addClass('win-background').removeClass('warning-background')
   }
 }
 
