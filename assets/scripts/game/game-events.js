@@ -10,7 +10,6 @@ const gameInit = () => {
   $('#tic-tac-toe').hide()
   $('#sign-up-container').hide()
   $('#change-password-container').hide()
-  $('#start-new-game').hide()
   $('#game-stats-container').hide()
 }
 
@@ -47,7 +46,6 @@ const addHandlers = () => {
     $('#square' + i.toString()).on('click', () => { updateSquare(i) })
   }
   $('#new-game-button').on('click', newGame)
-  $('#start-new-game').on('click', newGame)
   $('#game-stats').on('click', toggleGameStats)
 }
 

@@ -3,6 +3,8 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const authApi = require('./auth-api.js')
 const authUi = require('./auth-ui.js')
+const gameApi = require('../game/game-api.js')
+const gameEngine = require('../game/game-logic.js')
 
 const showSignUp = (event) => {
   $('#sign-up-container').show()
@@ -29,6 +31,8 @@ const onSignIn = (event) => {
   const data = getFormFields(event.target)
   authApi.signIn(data)
     .then(authUi.signInSuccess)
+    .then(gameApi.createGame)
+    .then(gameEngine.createGameSuccess)
     .catch(authUi.signInFail)
 }
 

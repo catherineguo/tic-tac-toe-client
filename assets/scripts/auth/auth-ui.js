@@ -32,7 +32,6 @@ const signInSuccess = (response) => {
   $('#user-auth-message').html('').removeClass('alert alert-success').removeClass('alert alert-danger')
   store.user = response.user
   $('#sign-in-container').hide()
-  $('#start-new-game').show()
 }
 
 const signInFail = () => {
