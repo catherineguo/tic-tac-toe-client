@@ -7,7 +7,7 @@ const addCurrentPlayer = (indexNum, currentPlayer, winOrDraw) => {
   } else if (winOrDraw === 'win') {
     winMessage(currentPlayer)
   } else {
-    $('#message-box').html(`<p>It's a draw!</p>`)
+    $('#message-box').html(`<p>It's a draw!</p>`).addClass('draw-background')
   }
 }
 
@@ -23,26 +23,27 @@ const addMark = (indexNum, currentPlayer) => {
 
 const clearBoard = () => {
   $('#game-container div div').html('')
-  $('#message-box').html(`<p>🍟's turn</p>`)
+  $('#message-box').html(`<p>🍟's turn</p>`).removeClass('win-background').removeClass('draw-background')
 }
 
 const turnMessage = (currentPlayer) => {
   if (currentPlayer === 'o') {
-    $('#message-box').html(`<p>🍟's turn</p>`)
+    $('#message-box').html(`<p>🍟's turn</p>`).removeClass('warning-background')
   } else {
-    $('#message-box').html(`<p>🍩's turn</p>`)
+    $('#message-box').html(`<p>🍩's turn</p>`).removeClass('warning-background')
   }
 }
 
 const winMessage = (winner) => {
   if (winner === 'x') {
-    $('#message-box').html(`<p>🍟 wins!</p>`)
+    $('#message-box').html(`<p>🍟 wins!</p>`).addClass('win-background')
   } else {
-    $('#message-box').html(`<p>🍩 wins!</p>`)
+    $('#message-box').html(`<p>🍩 wins!</p>`).addClass('win-background')
   }
 }
 
 const invalidMoveMessage = () => {
+  $('#message-box').addClass('warning-background')
   $('#message-box p').text(`That spot is taken!`)
 }
 
@@ -66,7 +67,7 @@ const onGetGamesSuccess = (response) => {
   } else {
     incompleteGames--
   }
-  $('#game-stats-text').html(`Total Games Played: ${numOfGames}<p>Completed Games: ${completeGames}</p><p>Incomplete Games: ${incompleteGames}</p>`)
+  $('#game-stats-text').html(`<strong>Total Games Played:</strong> ${numOfGames}<p><strong>Completed Games:</strong> ${completeGames}</p><p><strong>Incomplete Games:</strong> ${incompleteGames}</p>`)
 }
 
 const onGetGamesFail = (response) => {

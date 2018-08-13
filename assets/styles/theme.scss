@@ -4,123 +4,129 @@ body {
   color: $font-color;
   display: flex;
   flex-direction: column;
+  font-family: 'Roboto', sans-serif;
   font-size: $body-font-size;
   justify-content: center;
   line-height: $body-line-height;
   margin: $margin;
   padding: $body-padding;
+}
 
-  a {
-    color: $link-color;
-  }
+a {
+  color: $link-color;
 
-  a:hover {
+  :hover {
     color: $link-hover-color;
   }
+}
 
-  .btn {
-    font-size: $body-font-size;
-  }
+.btn {
+  font-size: $body-font-size;
+}
 
-  h1 {
-    font-size: $header-font-size;
-    line-height: $header-line-height;
-  }
+h1 {
+  font-size: $header-font-size;
+  line-height: $header-line-height;
+}
 
-  p {
-    margin: $element-margin;
-  }
+p,
+form,
+img,
+.game-container {
+  margin: $element-margin;
+}
 
-  form {
-    margin: $element-margin;
-  }
+input {
+  background-color: $white-background-color;
+  border-radius: 6px;
+  margin-bottom: 10px;
 
-  img {
-    margin: $element-margin;
-  }
-
-  input {
-    background-color: $white-background-color;
-    border-radius: 6px;
-    margin-bottom: 10px;
-  }
-
-  input:focus {
+  :focus {
     background-color: $input-focus-color;
     outline: none;
   }
+}
 
-  #tic-tac-toe {
+.tic-tac-toe-container {
+  font-size: $tic-tac-toe-font-size;
+
+  p {
     font-size: $tic-tac-toe-font-size;
-
-    h1 {
-      text-align: center;
-    }
-
-    p {
-      text-align: center;
-    }
-
-    #new-game-button {
-      display: block;
-      margin: 0 auto;
-    }
+    text-align: center;
   }
 
-  .section-container {
-    background-color: $section-background-color;
-    border-radius: 30px;
-    padding: 10px 50px 30px;
+  .new-game-button {
+    display: block;
+    margin: 0 auto;
   }
+}
 
-  .alert-container {
-    p {
-      margin: 5px;
-    }
+.section-container {
+  background-color: $section-background-color;
+  border-radius: $section-border-radius;
+  padding: $section-padding;
+}
+
+.alert-container {
+  p {
+    margin: 5px;
   }
+}
 
-  .well {
-    margin-bottom: 20px;
-    margin-top: 20px;
+.well {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.game-container {
+  p {
+    font-size: $board-font-size;
+    line-height: 130px;
+    margin: 0;
+    text-align: center;
   }
+}
 
-  .game-container {
-    margin: $element-margin;
+.board-top-row,
+.board-middle-row,
+.board-bottom-row {
+  cursor: pointer;
+  display: flex;
+}
 
-    p {
-      font-size: $board-font-size;
-      line-height: 130px;
-      margin: 0;
-      text-align: center;
-    }
+.board-top-row,
+.board-middle-row {
+  border-bottom: 5px solid $border-color;
+}
+
+.border-right {
+  border-right: 5px solid $border-color;
+}
+
+.game-box {
+  background-color: $white-background-color;
+  height: 130px;
+  width: 130px;
+}
+
+.modal-content {
+  h1,
+  p {
+    text-align: center;
   }
+}
 
-  .board-top-row,
-  .board-middle-row,
-  .board-bottom-row {
-    cursor: pointer;
-    display: flex;
-  }
+.win-background {
+  background-color: $link-color;
+  border-radius: $section-border-radius;
+}
 
-  .board-top-row,
-  .board-middle-row {
-    border-bottom: 5px solid $border-color;
-  }
+.draw-background {
+  background-color: $section-background-color;
+  border-radius: $section-border-radius;
+}
 
-  .border-right {
-    border-right: 5px solid $border-color;
-  }
-
-  .game-box {
-    background-color: $white-background-color;
-    height: 130px;
-    width: 130px;
-  }
-
-  .modal-content {
-    h1,
-    p {
-      text-align: center;
-    }
-  }
+.warning-background {
+  background-color: $link-hover-color;
+  border-radius: $section-border-radius;
 }
