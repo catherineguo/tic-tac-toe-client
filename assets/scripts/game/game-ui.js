@@ -51,6 +51,31 @@ const onGetGamesSuccess = (response) => {
   let numOfGames = 0
   let completeGames = 0
   let incompleteGames = 0
+
+  const checkArrayWinner = (array) => {
+    const topRow = [array[0], array[1], array[2]]
+    const middleRow = [array[3], array[4], array[5]]
+    const bottomRow = [array[6], array[7], array[8]]
+    const leftColumn = [array[0], array[3], array[6]]
+    const middleColumn = [array[1], array[4], array[7]]
+    const rightColumn = [array[2], array[5], array[8]]
+    const leftDiagonal = [array[0], array[4], array[8]]
+    const rightDiagonal = [array[2], array[4], array[6]]
+    const isX = (spot) => {
+      if (spot === 'x') {
+        return true
+      } else {
+        return false
+      }
+    }
+    if (topRow.every(isX) || middleRow.every(isX) || bottomRow.every(isX) || leftColumn.every(isX) ||
+        middleColumn.every(isX) || rightColumn.every(isX) || leftDiagonal.every(isX) || rightDiagonal.every(isX)) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   response.games.forEach((game) => {
     numOfGames++
     if (game.over) {
@@ -59,6 +84,19 @@ const onGetGamesSuccess = (response) => {
       incompleteGames++
     }
   })
+
+  const calculateWins = () => {
+    let wins = 0
+    for (let i = 0; i < response.games.length; i++) {
+      if (checkArrayWinner(response.games[i].cells)) {
+        wins++
+      }
+    }
+    return wins
+  }
+
+  const totalWins = calculateWins()
+
   if (numOfGames === 0) {
   } else {
     numOfGames--
@@ -67,7 +105,7 @@ const onGetGamesSuccess = (response) => {
   } else {
     incompleteGames--
   }
-  $('#game-stats-text').html(`<strong>Total Games Played:</strong> ${numOfGames}<p><strong>Completed Games:</strong> ${completeGames}</p><p><strong>Incomplete Games:</strong> ${incompleteGames}</p>`)
+  $('#game-stats-text').html(`Total Games Played: ${numOfGames}<p>Total Wins: ${totalWins}</p><p>Completed Games: ${completeGames}</p><p>Incomplete Games: ${incompleteGames}</p>`)
 }
 
 const onGetGamesFail = (response) => {
