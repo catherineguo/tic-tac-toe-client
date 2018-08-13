@@ -6,9 +6,11 @@ Technologies used to create this game: JavaScript, jQuery, AJAX, HTML, Sass, Boo
 ## Planning
 Before starting to write any code, I created wireframes to visualize my tic-tac-toe game. It included sign in, sign up, and gameplay flows. You can view my wireframes here: https://imgur.com/a/E1n9UM4
 
+I wanted a streamlined sign in experience that wouldn't confuse the user, which is why I didn't present both Sign In and Sign Up forms at the start.
+
 I also wrote out some user stories:
 - As a user, I can click on an open spot on the tic tac toe board and an 'x' will appear so my move is tracked.
-- As a user, I want the computer to tell me whether or not I won/drew/lost so I don't need to figure it out myself.
+- As a user, I want the computer to tell me whether or not I won/drew so I don't need to figure it out myself.
 - As a user, I want to be able to click a button to start a new game after the current game is over so I don't have to refresh or reload the page.
 - As a user, I want to see the history of how many games I've won, tied, or lost.
 
@@ -21,15 +23,15 @@ My functions to add 'x' or 'o' printed the letter in the corresponding spot in t
 Next I worked on click handlers to make what was happening in the console appear on the tic-tac-toe board in the browser. I also added the logic to determine win/draw in this phase.
 
 ## Development: User Authentication
-Initially, I had sign in, sign up, change password, and sign out all together with the tic-tac-toe board in one page. I wasn't concerned about showing and hiding the different components until I set up the API calls for user events.
+Initially, I had sign in, sign up, change password, and sign out all together with the tic-tac-toe board in one page. I wasn't concerned about showing and hiding the different components until I set up the API calls for user events. This process was relatively straightforward because we had gone over this in class before.
 
 Once I finished setting up the API calls, I focused on showing and hiding different elements to reflect the wireframes I drew. I also started adding styling to my game using Sass and Bootstrap.
 
 ## Development: Game API Calls
-This was the most difficult part of this project. I struggled to add the API calls to my game events, since I initially set it up to only update the UI. I was able to finally get the order of events to work so the click event would trigger the API call and then update the game board UI. Seeing my final project run as expected has been the most satisfying feeling I've had so far in this bootcamp!
+This was the most difficult part of this project. I wasn't sure where to add the API calls to my game events, since I initially set it up to only update the UI. At one point, I was sending the correct array to the Game API, but the x's and o's were flipped in the UI! Continuing to update the game array when the game was over was another issue I encountered during this part of the project. After a long Friday, I finally got the order of events to work so the click event would trigger the API call and then update the game board UI. Seeing my final project run as expected has been the most satisfying feeling I've had so far in this bootcamp!
 
 ## Unsolved Problems
-My game stats do not live update. They only update when the "game stats" button is clicked.
+Right now, my game stats do not live update. They only update when the "game stats" button is clicked. I also haven't added stats for games tied and lost.
 
 ## Future Updates
-I would like to add the ability for the user to play against a computer AI. Have a guest login option would be nice too.
+I would like to add the ability for the user to play against a computer AI. Having a guest login option would be nice too.
