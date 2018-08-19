@@ -27,7 +27,7 @@ const signUpFail = () => {
     $('#password').val('')
     $('#confirm-password').val('')
   } else {
-    $('#user-auth-message').html('<p>Sorry, that email address is already taken.</p>').addClass('alert alert-danger')
+    $('#user-auth-message').html('<p>Sorry, please try again.</p>').addClass('alert alert-danger')
     $('#sign-up input').val('')
   }
 }
