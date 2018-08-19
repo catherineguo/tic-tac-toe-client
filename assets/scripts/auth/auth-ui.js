@@ -55,6 +55,7 @@ const changePasswordSuccess = () => {
 const changePasswordFail = () => {
   $(window).scrollTop(0)
   $('#password-change-fail').show('fast').delay(800).hide('slow')
+  $('#change-password input').val('')
 }
 
 const signOutSuccess = () => {
