@@ -10,7 +10,6 @@ const gameInit = () => {
   $('#tic-tac-toe').hide()
   $('#sign-up-container').hide()
   $('#change-password-container').hide()
-  $('#game-stats-container').hide()
 }
 
 const newGame = () => {

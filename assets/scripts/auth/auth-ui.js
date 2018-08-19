@@ -8,8 +8,6 @@ const signOutClear = () => {
   $('#change-password input').val('')
   $('#user-auth-message').html('')
   $('#change-password-container').hide()
-  $('#game-stats-text').html('')
-  $('#game-stats-container').hide()
 }
 
 const signUpSuccess = () => {
@@ -24,7 +22,14 @@ const signUpSuccess = () => {
 
 const signUpFail = () => {
   $('#user-auth-message').html('').removeClass('alert alert-success').removeClass('alert alert-danger')
-  $('#user-auth-message').html('<p>Sorry, try again.</p>').addClass('alert alert-danger')
+  if ($('#password').val() !== $('#confirm-password').val()) {
+    $('#user-auth-message').html("<p>Sorry, your passwords don't match.</p>").addClass('alert alert-danger')
+    $('#password').val('')
+    $('#confirm-password').val('')
+  } else {
+    $('#user-auth-message').html('<p>Sorry, that email address is already taken.</p>').addClass('alert alert-danger')
+    $('#sign-up input').val('')
+  }
 }
 
 const signInSuccess = (response) => {
@@ -37,6 +42,7 @@ const signInSuccess = (response) => {
 const signInFail = () => {
   $('#user-auth-message').html('').removeClass('alert alert-success').removeClass('alert alert-danger')
   $('#user-auth-message').html('<p>Oops, try again.</p>').addClass('alert alert-danger')
+  $('#sign-in input').val('')
 }
 
 const changePasswordSuccess = () => {
