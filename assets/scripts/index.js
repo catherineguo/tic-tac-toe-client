@@ -9,6 +9,7 @@ const gameEvents = require('./game/game-events.js')
 const authEvents = require('./auth/auth-events.js')
 
 $(() => {
+  $('html').show()
   gameEvents.gameInit()
   gameEvents.addHandlers()
   authEvents.addHandlers()
