@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html style="display: none;">
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <section>
+        <img src="https://i.imgur.com/8E4Hjuy.png" alt="tic tac toe title">
+      </section>
+
+      <section class="alert-container" id="user-auth-message">
+      </section>
+
+      <section class="section-container" id="sign-in-container">
+        <h1>sign in</h1>
+        <form class="form-signin" id='sign-in'>
+          <fieldset>
+            <input type="email" class="form-control input-lg" name="credentials[email]" placeholder="Email">
+            <input type="password" class="form-control input-lg" name="credentials[password]" placeholder="Password">
+            <button type="submit" class="btn btn-lg btn-info btn-block">Sign In</button>
+          </fieldset>
+        </form>
+        <a href="#" id="sign-up-link">I need to sign up for an account</a>
+      </section>
+
+      <section class="section-container" id="sign-up-container">
+        <h1>sign up</h1>
+        <form class="form-signin" id='sign-up'>
+          <fieldset>
+            <input type="email" class="form-control input-lg" name="credentials[email]" placeholder="Email">
+            <input type="password" class="form-control input-lg" id="password" name="credentials[password]" placeholder="Password">
+            <input type="password" class="form-control input-lg" id="confirm-password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <button type="submit" class="btn btn-lg btn-info btn-block">Sign Up</button>
+          </fieldset>
+        </form>
+        <a href="#" id="back-to-signin">Take me back to sign-in page</a>
+      </section>
+
+      <section class="tic-tac-toe-container" id="tic-tac-toe">
+        <section class="alert-container alert alert-success" id="password-change-success">
+          <p>Password changed.</p>
+        </section>
+
+        <section class="alert-container alert alert-danger" id="password-change-fail">
+          <p>Failed to change password.</p>
+        </section>
+
+        <button type="button" class="btn btn-info new-game-button" id="new-game-button">New Game</button>
+        <section id="message-box">
+        </section>
+          <div class="game-container" id="game-container">
+            <div class="board-top-row">
+              <div class= "game-box border-right" id="square0"></div>
+              <div class= "game-box border-right" id="square1"></div>
+              <div class= "game-box" id="square2"></div>
+            </div>
+            <div class="board-middle-row">
+              <div class= "game-box border-right" id="square3"></div>
+              <div class= "game-box border-right" id="square4"></div>
+              <div class= "game-box" id="square5"></div>
+            </div>
+            <div class="board-bottom-row">
+              <div class= "game-box border-right" id="square6"></div>
+              <div class= "game-box border-right" id="square7"></div>
+              <div class= "game-box" id="square8"></div>
+            </div>
+          </div>
+          <div class="bottom-buttons">
+            <button type="button" class="btn btn-info" id="sign-out">sign out</button>
+            <button type="button" class="btn btn-info" id="change-password-link">change password</button>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-sm" id="game-stats">game stats</button>
+          </div>
+      </section>
+
+      <section class="well section-container" id="change-password-container">
+        <h1>change password</h1>
+        <form id='change-password'>
+          <fieldset>
+            <input type="password" name="passwords[old]" placeholder="Current Password">
+            <input type="password" name="passwords[new]" placeholder="New Password">
+            <button type="submit" class="btn btn-info">change password</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <h1>Game Stats</h1>
+            <p id="game-stats-text"></p>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
