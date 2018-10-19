@@ -8,7 +8,7 @@ body {
   font-size: $body-font-size;
   justify-content: center;
   line-height: $body-line-height;
-  margin: $margin;
+  margin: $margin 0;
   padding: $body-padding;
 }
 
@@ -109,6 +109,17 @@ input {
   width: 130px;
 }
 
+.bottom-buttons {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  button {
+    margin: 2px;
+  }
+}
+
 .modal-content {
   h1,
   p {
@@ -129,4 +140,23 @@ input {
 .warning-background {
   background-color: $link-hover-color;
   border-radius: $section-border-radius;
+}
+
+@media (max-width: 450px) {
+  body {
+    margin: 20px;
+  }
+
+  img {
+    height: auto;
+    width: 300px;
+  }
+
+  .section-container {
+    padding: 10px 30px 30px;
+  }
+
+  .game-box {
+    width: 120px;
+  }
 }
